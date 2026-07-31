@@ -3,6 +3,8 @@ import  ApiError from '../utils/ApiError.js';
 
 const EDITABLE_FIELDS = ['name', 'avatar', 'bio', 'branch', 'batch', 'graduationYear'];
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+export const PUBLIC_PROFILE_FIELDS = 'name avatar bio branch batch graduationYear';
+//Mongoose only returns these fields plus _id. email, googleId, role, refreshToken, organization are never fetched from Mongo at all,
 
 export const getProfile = async (userId) => {
   const user = await User.findById(userId).select('-refreshToken');
@@ -27,8 +29,7 @@ export const updateProfile = async (userId, updates) => {
   if (!user) throw new ApiError(404, 'User not found');
   return user;
 };
-const PUBLIC_PROFILE_FIELDS = 'name avatar bio branch batch graduationYear';
-//Mongoose only returns these fields plus _id. email, googleId, role, refreshToken, organization are never fetched from Mongo at all,
+
 
 export const getPublicProfile = async (userId) => {
   const user = await User.findById(userId).select(PUBLIC_PROFILE_FIELDS);
@@ -51,3 +52,4 @@ export const searchUsersByName = async (searchTerm, currentUserId) => {
   return users;
 };
 //"a.*", it's treated as the literal string "a.*", not a wildcard pattern). This directly addresses the ReDoS/injection concern
+
