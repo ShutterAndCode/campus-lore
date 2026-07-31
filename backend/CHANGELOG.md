@@ -6,6 +6,104 @@ The project follows milestone-based development. Each milestone represents a com
 
 ---
 
+# Changelog
+
+## B1.3 - Authentication Middleware & Token Management
+
+### ✨ Authentication
+- Added JWT access token authentication middleware.
+- Added role-based authorization middleware.
+- Implemented refresh token authentication flow.
+- Implemented secure logout with refresh token revocation.
+- Centralized JWT generation and verification utilities.
+
+### 🔐 Google OAuth
+- Refactored Google OAuth callback controller.
+- Persist refresh tokens in the database after successful login.
+- Updated OAuth callback to use the service layer.
+- Improved Passport.js integration and authentication flow.
+
+### 🧠 Service Layer
+- Refactored authentication logic into dedicated service functions.
+- Added `findOrCreateGoogleUser()`.
+- Added `generateAuthTokens()`.
+- Added `refreshAccessToken()`.
+- Added `logoutUser()`.
+- Introduced private `getUserFromRefreshToken()` helper to eliminate duplicated validation logic.
+
+### 📂 Controllers
+- Refactored authentication controllers to use `asyncHandler`.
+- Standardized successful responses using `ApiResponse`.
+- Replaced manual error handling with centralized `ApiError`.
+- Improved controller readability by keeping business logic inside services.
+
+### 🛡️ Middleware
+- Added authentication middleware for protected routes.
+- Added role-based authorization middleware.
+- Standardized authentication error responses.
+
+### 🗄️ User Model
+- Made `googleId` immutable.
+- Made `organization` immutable.
+- Added schema indexes for:
+  - `email`
+  - `googleId`
+  - `organization`
+- Added validation for `graduationYear`.
+
+### ⚙️ Refactoring & Cleanup
+- Continued CommonJS → ES Module migration.
+- Standardized import/export syntax across authentication modules.
+- Replaced direct `process.env` usage with centralized `env` configuration.
+- Removed unnecessary `try/catch` blocks in favor of `asyncHandler` and `ApiError`.
+- Improved code consistency across authentication utilities.
+
+### ✅ Testing
+- Verified MongoDB connectivity.
+- Verified Google OAuth login flow.
+- Verified automatic user creation on first login.
+- Verified refresh token generation and storage.
+- Verified refresh endpoint.
+- Verified secure logout flow.
+- Verified cookie handling.
+- Verified authentication middleware.
+- Verified authorization middleware.
+## B1.2 - Google OAuth Authentication
+
+**Status:** ✅ Completed
+
+### Added
+
+* Configured Passport.js with the Google OAuth 2.0 strategy.
+* Implemented Google authentication routes.
+* Restricted sign-in to approved institutional email domains.
+* Created new users automatically on first successful login.
+* Logged in existing users using their Google account.
+* Generated JWT access and refresh tokens after successful authentication.
+* Stored the refresh token securely in an HTTP-only cookie.
+* Configured Google Cloud OAuth credentials for local development.
+
+### Architecture Decisions
+
+* Google OAuth is the only supported authentication method.
+* Institutional email domain validation is performed during authentication.
+* Passport.js is responsible only for authentication.
+* JWT generation is delegated to dedicated utility functions.
+* Authentication business logic resides in the service layer.
+
+### Verified
+
+* Google sign-in succeeds.
+* Unauthorized email domains are rejected.
+* New users are created correctly.
+* Existing users can log in successfully.
+* JWTs are generated correctly.
+* Refresh token cookie is set successfully.
+
+### Commit
+
+`feat(auth): implement Google OAuth authentication`
+
 ## B1.1 - Authentication Foundation
 
 **Status:** ✅ Completed

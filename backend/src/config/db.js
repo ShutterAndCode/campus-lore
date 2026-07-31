@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const env = require('./env');
+import mongoose from "mongoose";
+import env from "./env.js";
 
 /**
  * Connects to MongoDB using Mongoose.
@@ -11,13 +11,13 @@ const connectDB = async () => {
     await mongoose.connect(env.MONGO_URI);
     console.log(`[db] MongoDB connected: ${mongoose.connection.host}`);
   } catch (error) {
-    console.error(`[db] MongoDB connection failed: ${error.message}`);
+    console.error("[db] MongoDB connection failed:", error);
     process.exit(1);
   }
 };
 
-mongoose.connection.on('disconnected', () => {
-  console.warn('[db] MongoDB disconnected');
+mongoose.connection.on("disconnected", () => {
+  console.warn("[db] MongoDB disconnected");
 });
 
-module.exports = connectDB;
+export default connectDB;

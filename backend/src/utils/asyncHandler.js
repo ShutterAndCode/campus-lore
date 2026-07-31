@@ -1,13 +1,14 @@
 /**
- * Wraps an async route/middleware handler and forwards any
- * rejected promise to Express's error handling via next(err),
- * avoiding repetitive try/catch blocks in every controller.
+ * Wraps an async controller or middleware and forwards rejected
+ * promises to Express's centralized error handler.
  *
  * @param {Function} requestHandler
  * @returns {Function}
  */
-const asyncHandler = (requestHandler) => (req, res, next) => {
-  Promise.resolve(requestHandler(req, res, next)).catch(next);
+const asyncHandler = (requestHandler) => {
+  return (req, res, next) => {
+    return Promise.resolve(requestHandler(req, res, next)).catch(next);
+  };
 };
 
-module.exports = asyncHandler;
+export default asyncHandler;

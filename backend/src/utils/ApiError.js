@@ -10,8 +10,14 @@ class ApiError extends Error {
    * @param {Array} errors - Optional array of granular error details
    * @param {string} stack - Optional stack trace override
    */
-  constructor(statusCode, message = 'Something went wrong', errors = [], stack = '') {
+  constructor(
+    statusCode,
+    message = "Something went wrong",
+    errors = [],
+    stack = ""
+  ) {
     super(message);
+
     this.statusCode = statusCode;
     this.data = null;
     this.success = false;
@@ -25,4 +31,4 @@ class ApiError extends Error {
   }
 }
 
-module.exports = ApiError;
+export default ApiError;

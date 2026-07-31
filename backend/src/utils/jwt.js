@@ -1,39 +1,44 @@
-const jwt = require('jsonwebtoken');
-const env = require('../config/env');
+import jwt from "jsonwebtoken";
+import env from "../config/env.js";
+import ApiError from "./ApiError.js";
 
-const generateAccessToken = (user) => {
+export const generateAccessToken = (user) => {
   return jwt.sign(
     {
       id: user._id,
-      email: user.email,
       role: user.role,
     },
     env.JWT_ACCESS_SECRET,
-    { expiresIn: env.JWT_ACCESS_EXPIRY }
+    {
+      expiresIn: env.JWT_ACCESS_EXPIRY,
+    }
   );
 };
 
-const generateRefreshToken = (user) => {
+export const generateRefreshToken = (user) => {
   return jwt.sign(
     {
       id: user._id,
     },
     env.JWT_REFRESH_SECRET,
-    { expiresIn: env.JWT_REFRESH_EXPIRY }
+    {
+      expiresIn: env.JWT_REFRESH_EXPIRY,
+    }
   );
 };
 
-const verifyAccessToken = (token) => {
-  return jwt.verify(token, env.JWT_ACCESS_SECRET);
+export const verifyAccessToken = (token) => {
+  try {
+    return jwt.verify(token, env.JWT_ACCESS_SECRET);
+  } catch {
+    throw new ApiError(401, "Invalid or expired access token");
+  }
 };
 
-const verifyRefreshToken = (token) => {
-  return jwt.verify(token, env.JWT_REFRESH_SECRET);
-};
-
-module.exports = {
-  generateAccessToken,
-  generateRefreshToken,
-  verifyAccessToken,
-  verifyRefreshToken,
+export const verifyRefreshToken = (token) => {
+  try {
+    return jwt.verify(token, env.JWT_REFRESH_SECRET);
+  } catch {
+    throw new ApiError(401, "Invalid or expired refresh token");
+  }
 };

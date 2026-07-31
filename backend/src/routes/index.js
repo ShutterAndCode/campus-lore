@@ -1,10 +1,11 @@
-const express = require('express');
-const healthRoutes = require('./health.routes');
+import express from "express";
+import healthRoutes from "./health.routes.js";
+import authRoutes from "./auth.routes.js";
 
 const router = express.Router();
 
-// Mount feature routes here as the app grows.
-// Health check is available at GET /api/health
-router.use('/health', healthRoutes);
+// Feature routes
+router.use("/health", healthRoutes);
+router.use("/auth", authRoutes);
 
-module.exports = router;
+export default router;

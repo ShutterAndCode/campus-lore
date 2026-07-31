@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
@@ -8,7 +8,9 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      immutable: true,
     },
+
     name: {
       type: String,
       required: true,
@@ -23,7 +25,7 @@ const userSchema = new Schema(
     },
     avatar: {
       type: String,
-      default: '',
+      default: "",
     },
     branch: {
       type: String,
@@ -35,20 +37,24 @@ const userSchema = new Schema(
     },
     graduationYear: {
       type: Number,
+      min: 1960,
+      max: 2100,
     },
     bio: {
       type: String,
       trim: true,
-      default: '',
+      default: "",
     },
     role: {
       type: String,
-      enum: ['student', 'admin'],
-      default: 'student',
+      enum: ["student", "admin"],
+      default: "student",
     },
     organization: {
       type: String,
+      required: true,
       trim: true,
+      immutable: true,
     },
     refreshToken: {
       type: String,
@@ -56,9 +62,13 @@ const userSchema = new Schema(
       select: false,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  },
 );
 
-const User = mongoose.model('User', userSchema);
+userSchema.index({ organization: 1 });
 
-module.exports = User;
+const User = mongoose.model("User", userSchema);
+
+export default User;

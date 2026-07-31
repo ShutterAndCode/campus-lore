@@ -1,32 +1,31 @@
-const ApiError = require('../utils/ApiError');
-const env = require('../config/env');
+import ApiError from "../utils/ApiError.js";
+import env from "../config/env.js";
 
-/**
- * Centralized error handling middleware.
- * Normalizes both known (ApiError) and unknown errors into a
- * consistent JSON response shape, and hides stack traces in production.
- */
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars wtf??
 const errorHandler = (err, req, res, next) => {
-  let error = err;
+  const error =
+    err instanceof ApiError
+      ? err
+      : new ApiError(
+          err.statusCode || 500,
+          err.message || "Internal Server Error",
+          [],
+          err.stack
+        );
 
-  if (!(error instanceof ApiError)) {
-    const statusCode = error.statusCode || 500;
-    const message = error.message || 'Internal Server Error';
-    error = new ApiError(statusCode, message, [], error.stack);
-  }
+  console.error(
+    `[error] ${req.method} ${req.originalUrl} -> ${error.statusCode} ${error.message}`
+  );
 
-  const response = {
+  return res.status(error.statusCode).json({
     success: false,
     statusCode: error.statusCode,
     message: error.message,
     errors: error.errors,
-    ...(env.NODE_ENV === 'development' ? { stack: error.stack } : {}),
-  };
-
-  console.error(`[error] ${req.method} ${req.originalUrl} -> ${error.statusCode} ${error.message}`);
-
-  res.status(error.statusCode).json(response);
+    ...(env.NODE_ENV === "development" && {
+      stack: error.stack,
+    }),
+  });
 };
 
-module.exports = errorHandler;
+export default errorHandler;

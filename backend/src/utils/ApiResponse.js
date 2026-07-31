@@ -8,7 +8,7 @@ class ApiResponse {
    * @param {*} data - Response payload
    * @param {string} message - Human-readable success message
    */
-  constructor(statusCode, data = null, message = 'Success') {
+  constructor(statusCode, data = null, message = "Success") {
     this.statusCode = statusCode;
     this.data = data;
     this.message = message;
@@ -16,4 +16,4 @@ class ApiResponse {
   }
 }
 
-module.exports = ApiResponse;
+export default ApiResponse;
