@@ -74,6 +74,28 @@ export const updateRequestStatus = async (requestId, userId, newStatus) => {
 
   return request;
 };
+
+export const cancelMentorshipRequest = async (requestId, userId) => {
+  const request = await MentorshipRequest.findById(requestId);
+
+  if (!request) {
+    throw new ApiError(404, 'Mentorship request not found');
+  }
+
+  if (request.sender.toString() !== userId.toString()) {
+    throw new ApiError(403, 'You are not authorized to cancel this request');
+  }
+
+  if (request.status !== 'pending') {
+    throw new ApiError(409, 'Only pending requests can be cancelled');
+  }
+
+  request.status = 'cancelled';
+  await request.save();
+
+  return request;
+};
+
 export const getMentors = async (userId) => {
   const requests = await MentorshipRequest.find({
     receiver: userId,

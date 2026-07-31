@@ -25,6 +25,12 @@ export const updateRequestStatusController = asyncHandler(async (req, res) => {
   res.status(200).json(new ApiResponse(200, updatedRequest, 'Request status updated successfully'));
 });
 
+export const cancelMentorshipRequestController = asyncHandler(async (req, res) => {
+  const { requestId } = req.params;
+  const cancelledRequest = await cancelMentorshipRequest(requestId, req.user._id);
+  res.status(200).json(new ApiResponse(200, cancelledRequest, 'Mentorship request cancelled successfully'));
+});
+
 export const getMentorsController = asyncHandler(async (req, res) => {
   const mentors = await getMentors(req.user._id);
   res.status(200).json(new ApiResponse(200, mentors, 'Mentors fetched successfully'));
