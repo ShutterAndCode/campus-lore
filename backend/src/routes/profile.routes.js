@@ -4,11 +4,13 @@ import { validate } from "../middlewares/validate.middleware.js"; // confirm thi
 import {
   updateProfileSchema,
   getPublicProfileParamsSchema,
+  searchUsersQuerySchema,
 } from "../validators/profile.validator.js";
 import {
   getMyProfile,
   updateMyProfile,
   getPublicProfileController,
+  searchUsersController,
 } from "../controllers/profile.controller.js";
 
 const router = Router();
@@ -20,6 +22,16 @@ router.patch(
   validate(updateProfileSchema),
   updateMyProfile,
 );
+// so that search isnt considered as userID
+router.get(
+  '/search',
+  authenticate,
+  validate(searchUsersQuerySchema, 'query'),
+  searchUsersController
+);
+
+
+//
 ///:userId (treating "me" as a userId value if placed before me route) if /:userId were declared first.
 router.get(
   "/:userId",
@@ -27,5 +39,6 @@ router.get(
   validate(getPublicProfileParamsSchema, "params"),
   getPublicProfileController,
 );
+
 
 export default router;

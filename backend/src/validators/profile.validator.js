@@ -25,3 +25,13 @@ export const getPublicProfileParamsSchema = z
   .strict();
 
   //.refine() - Zod's mechanism for custom validation logic beyond built-in checks like .min()/.max().
+
+  export const searchUsersQuerySchema = z
+  .object({
+    name: z
+      .string()
+      .trim()
+      .min(1, 'Search query cannot be empty')
+      .max(50, 'Search query too long'),
+  })
+  .strict();
