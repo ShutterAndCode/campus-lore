@@ -1,8 +1,7 @@
 import MentorshipRequest from "../models/mentorshipRequest.model.js";
 import User from "../models/user.model.js";
 import ApiError from "../utils/ApiError.js";
-import { PUBLIC_PROFILE_FIELDS } from './profile.service.js';
-
+import { PUBLIC_PROFILE_FIELDS } from "./profile.service.js";
 
 export const createMentorshipRequest = async (
   senderId,
@@ -74,4 +73,25 @@ export const updateRequestStatus = async (requestId, userId, newStatus) => {
   await request.save();
 
   return request;
+};
+export const getMentors = async (userId) => {
+  const requests = await MentorshipRequest.find({
+    receiver: userId,
+    status: "accepted",
+  })
+    .populate("sender", PUBLIC_PROFILE_FIELDS)
+    .sort({ updatedAt: -1 });
+
+  return requests.map((r) => r.sender);
+};
+
+export const getMentees = async (userId) => {
+  const requests = await MentorshipRequest.find({
+    sender: userId,
+    status: "accepted",
+  })
+    .populate("receiver", PUBLIC_PROFILE_FIELDS)
+    .sort({ updatedAt: -1 });
+
+  return requests.map((r) => r.receiver);
 };

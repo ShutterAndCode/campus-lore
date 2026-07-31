@@ -24,3 +24,13 @@ export const updateRequestStatusController = asyncHandler(async (req, res) => {
   const updatedRequest = await updateRequestStatus(requestId, req.user._id, status);
   res.status(200).json(new ApiResponse(200, updatedRequest, 'Request status updated successfully'));
 });
+
+export const getMentorsController = asyncHandler(async (req, res) => {
+  const mentors = await getMentors(req.user._id);
+  res.status(200).json(new ApiResponse(200, mentors, 'Mentors fetched successfully'));
+});
+
+export const getMenteesController = asyncHandler(async (req, res) => {
+  const mentees = await getMentees(req.user._id);
+  res.status(200).json(new ApiResponse(200, mentees, 'Mentees fetched successfully'));
+});
