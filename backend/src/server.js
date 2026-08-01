@@ -1,18 +1,23 @@
 import app from "./app.js";
 import env from "./config/env.js";
 import connectDB from "./config/db.js";
+import http from "http";
+import { initializeSocket } from "./socket/socket.js";
 
 let server;
 
 const startServer = async () => {
   await connectDB();
 
-  server = app.listen(env.PORT, () => {
-    console.log(
-      `[server] Running in ${env.NODE_ENV} mode on port ${env.PORT}`
-    );
+  const httpServer = http.createServer(app);
+
+  initializeSocket(httpServer);
+
+  server = httpServer.listen(env.PORT, () => {
+    console.log(`[server] Running in ${env.NODE_ENV} mode on port ${env.PORT}`);
   });
 };
+//Socket.IO must attach to the actual http.Server, not directly to the Express app.
 
 startServer();
 

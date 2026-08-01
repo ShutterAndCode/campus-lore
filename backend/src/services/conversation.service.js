@@ -31,20 +31,7 @@ export const createConversation = async (requestId) => {
 };
 
 export const getConversationById = async (conversationId, userId) => {
-  const conversation = await Conversation.findById(conversationId);
-
-  if (!conversation) {
-    throw new ApiError(404, 'Conversation not found');
-  }
-
-  const isParticipant = conversation.participants.some(//read bout .some
-    (p) => p.toString() === userId.toString()
-  );
-  if (!isParticipant) {
-    throw new ApiError(403, 'You are not a participant in this conversation');
-  }
-
-  return conversation;
+  return await verifyParticipant(conversationId, userId);
 };
 
 export const getUserConversations = async (userId) => {
@@ -53,4 +40,22 @@ export const getUserConversations = async (userId) => {
   });
 
   return conversations;
+};
+
+export const verifyParticipant = async (conversationId, userId) => {
+  const conversation = await Conversation.findById(conversationId);
+
+  if (!conversation) {
+    throw new ApiError(404, 'Conversation not found');
+  }
+
+  const isParticipant = conversation.participants.some(
+    (participant) => participant.toString() === userId.toString()
+  );
+
+  if (!isParticipant) {
+    throw new ApiError(403, 'You are not a participant in this conversation');
+  }
+
+  return conversation;
 };
