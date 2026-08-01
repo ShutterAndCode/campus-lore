@@ -2,6 +2,7 @@ import MentorshipRequest from "../models/mentorshipRequest.model.js";
 import User from "../models/user.model.js";
 import ApiError from "../utils/ApiError.js";
 import { PUBLIC_PROFILE_FIELDS } from "./profile.service.js";
+import { createNotification } from "./notification.service.js";
 
 export const createMentorshipRequest = async (
   senderId,
@@ -31,6 +32,16 @@ export const createMentorshipRequest = async (
     receiver: receiverId,
     message,
   });
+  await createNotification({
+    recipient: request.receiver,
+    sender: request.sender,
+    type: "mentorship_request_received",
+    title: "New Mentorship Request",
+    message: "You have received a new mentorship request.",
+    relatedResource: request._id,
+  }).catch((err) => console.error("Notification creation failed:", err));
+
+  return request;
 
   return request;
 };
@@ -71,6 +82,21 @@ export const updateRequestStatus = async (requestId, userId, newStatus) => {
 
   request.status = newStatus;
   await request.save();
+  const notificationType =
+    newStatus === "accepted"
+      ? "mentorship_request_accepted"
+      : "mentorship_request_rejected";
+
+  await createNotification({
+    recipient: request.sender,
+    sender: request.receiver,
+    type: notificationType,
+    title: newStatus === "accepted" ? "Request Accepted" : "Request Rejected",
+    message: `Your mentorship request has been ${newStatus}.`,
+    relatedResource: request._id,
+  }).catch((err) => console.error("Notification creation failed:", err));
+
+  return request;
 
   return request;
 };
@@ -79,19 +105,29 @@ export const cancelMentorshipRequest = async (requestId, userId) => {
   const request = await MentorshipRequest.findById(requestId);
 
   if (!request) {
-    throw new ApiError(404, 'Mentorship request not found');
+    throw new ApiError(404, "Mentorship request not found");
   }
 
   if (request.sender.toString() !== userId.toString()) {
-    throw new ApiError(403, 'You are not authorized to cancel this request');
+    throw new ApiError(403, "You are not authorized to cancel this request");
   }
 
-  if (request.status !== 'pending') {
-    throw new ApiError(409, 'Only pending requests can be cancelled');
+  if (request.status !== "pending") {
+    throw new ApiError(409, "Only pending requests can be cancelled");
   }
 
-  request.status = 'cancelled';
+  request.status = "cancelled";
   await request.save();
+  await createNotification({
+    recipient: request.receiver,
+    sender: request.sender,
+    type: 'mentorship_request_cancelled',
+    title: 'Request Cancelled',
+    message: 'A mentorship request sent to you has been cancelled.',
+    relatedResource: request._id,
+  }).catch((err) => console.error('Notification creation failed:', err));
+
+  return request;
 
   return request;
 };
