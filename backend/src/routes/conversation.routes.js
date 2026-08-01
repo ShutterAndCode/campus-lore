@@ -10,12 +10,11 @@ import {
   getConversationsController,
   getConversationByIdController,
 } from "../controllers/conversation.controller.js";
-import {
-  sendMessageBodySchema,
-} from "../validators/message.validator.js";
+import { sendMessageBodySchema } from "../validators/message.validator.js";
 import {
   sendMessageController,
   getConversationMessagesController,
+  getUnreadMessageCountController,
 } from "../controllers/message.controller.js";
 
 const router = Router();
@@ -29,6 +28,8 @@ router.post(
 
 router.get("/", authenticate, getConversationsController);
 
+router.get("/unread-count", authenticate, getUnreadMessageCountController);
+///unread-count would be swallowed by /:conversationId, attempting to treat "unread-count" as a conversation ID and failing ObjectId validation instead of actually running the count.
 router.get(
   "/:conversationId",
   authenticate,
@@ -37,18 +38,18 @@ router.get(
 );
 
 router.post(
-  '/:conversationId/messages',
+  "/:conversationId/messages",
   authenticate,
-  validate(conversationIdParamsSchema, 'params'),
-  validate(sendMessageBodySchema, 'body'),
-  sendMessageController
+  validate(conversationIdParamsSchema, "params"),
+  validate(sendMessageBodySchema, "body"),
+  sendMessageController,
 );
 
 router.get(
-  '/:conversationId/messages',
+  "/:conversationId/messages",
   authenticate,
-  validate(conversationIdParamsSchema, 'params'),
-  getConversationMessagesController
+  validate(conversationIdParamsSchema, "params"),
+  getConversationMessagesController,
 );
 
 export default router;

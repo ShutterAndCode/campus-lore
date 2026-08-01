@@ -5,7 +5,7 @@ import authRoutes from "./auth.routes.js";
 import profileRoutes from "./profile.routes.js";
 import mentorshipRoutes from "./mentorship.routes.js";
 import conversationRoutes from './conversation.routes.js';
-
+import messageRoutes from './message.routes.js';
 //controllers
 import {
   getMentorsController,
@@ -40,4 +40,5 @@ router.patch(
 router.get("/mentors", authenticate, getMentorsController);
 router.get("/mentees", authenticate, getMenteesController);
 router.use('/conversations', conversationRoutes);
+router.use('/messages', messageRoutes);
 export default router;

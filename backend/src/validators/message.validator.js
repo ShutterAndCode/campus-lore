@@ -10,3 +10,11 @@ export const sendMessageBodySchema = z
       .max(2000, "Message too long"),
   })
   .strict();
+
+  export const messageIdParamsSchema = z
+  .object({
+    messageId: z.string().refine((val) => Types.ObjectId.isValid(val), {
+      message: 'Invalid messageId format',
+    }),
+  })
+  .strict();
