@@ -1,14 +1,9 @@
-import { z } from 'zod';
-import { Types } from 'mongoose';
+import { z } from "zod";
+import { Types } from "mongoose";
+import { objectIdParamsSchema } from "./common.validator.js";
 
-export const notificationIdParamsSchema = z
-  .object({
-    notificationId: z.string().refine((val) => Types.ObjectId.isValid(val), {
-      message: 'Invalid notificationId format',
-    }),
-  })
-  .strict();
-
+export const notificationIdParamsSchema =
+  objectIdParamsSchema("notificationId");
 export const getNotificationsQuerySchema = z
   .object({
     page: z.coerce.number().int().min(1).default(1),

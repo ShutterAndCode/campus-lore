@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { Types } from "mongoose";
-
+import { objectIdParamsSchema } from './common.validator.js';
 export const sendMessageBodySchema = z
   .object({
     content: z
@@ -11,10 +11,4 @@ export const sendMessageBodySchema = z
   })
   .strict();
 
-  export const messageIdParamsSchema = z
-  .object({
-    messageId: z.string().refine((val) => Types.ObjectId.isValid(val), {
-      message: 'Invalid messageId format',
-    }),
-  })
-  .strict();
+  export const messageIdParamsSchema = objectIdParamsSchema('messageId')

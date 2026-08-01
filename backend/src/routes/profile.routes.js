@@ -1,11 +1,14 @@
 import { Router } from "express";
 import { authenticate } from "../middlewares/auth.middleware.js";
-import { validate } from "../middlewares/validate.middleware.js"; // confirm this exists/path
+import { validate } from "../middlewares/validate.middleware.js";
+
 import {
   updateProfileSchema,
-  getPublicProfileParamsSchema,
   searchUsersQuerySchema,
 } from "../validators/profile.validator.js";
+
+import { userIdParamsSchema } from "../validators/common.validator.js";
+
 import {
   getMyProfile,
   updateMyProfile,
@@ -16,29 +19,28 @@ import {
 const router = Router();
 
 router.get("/me", authenticate, getMyProfile);
+
 router.patch(
   "/me",
   authenticate,
   validate(updateProfileSchema),
-  updateMyProfile,
+  updateMyProfile
 );
-// so that search isnt considered as userID
+
+// Place before "/:userId" so "search" isn't treated as a userId.
 router.get(
-  '/search',
+  "/search",
   authenticate,
-  validate(searchUsersQuerySchema, 'query'),
+  validate(searchUsersQuerySchema, "query"),
   searchUsersController
 );
 
-
-//
-///:userId (treating "me" as a userId value if placed before me route) if /:userId were declared first.
+// Public profile by user ID.
 router.get(
   "/:userId",
   authenticate,
-  validate(getPublicProfileParamsSchema, "params"),
-  getPublicProfileController,
+  validate(userIdParamsSchema, "params"),
+  getPublicProfileController
 );
-
 
 export default router;

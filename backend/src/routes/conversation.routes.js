@@ -4,7 +4,7 @@ import { validate } from "../middlewares/validate.middleware.js";
 import {
   requestIdParamsSchema,
   conversationIdParamsSchema,
-} from "../validators/conversation.validator.js";
+} from "../validators/common.validator.js";
 import {
   createConversationController,
   getConversationsController,
