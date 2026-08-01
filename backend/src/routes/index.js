@@ -7,6 +7,8 @@ import mentorshipRoutes from "./mentorship.routes.js";
 import conversationRoutes from './conversation.routes.js';
 import messageRoutes from './message.routes.js';
 import notificationRoutes from './notification.routes.js';
+import postRoutes from './post.routes.js';
+
 //controllers
 import {
   getMentorsController,
@@ -43,4 +45,5 @@ router.get("/mentees", authenticate, getMenteesController);
 router.use('/conversations', conversationRoutes);
 router.use('/messages', messageRoutes);
 router.use('/notifications', notificationRoutes);
+router.use('/posts', postRoutes);
 export default router;

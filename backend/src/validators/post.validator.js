@@ -1,0 +1,12 @@
+import { z } from 'zod';
+
+export const createPostSchema = z
+  .object({
+    title: z.string().trim().min(1, 'Title is required').max(150, 'Title too long'),
+    content: z.string().trim().min(1, 'Content is required').max(5000, 'Content too long'),
+    academicYear: z.enum(['1st', '2nd', '3rd', '4th']),
+    department: z.string().trim().min(1, 'Department is required').max(100),
+    tags: z.array(z.string().trim().min(1)).max(10, 'Too many tags').optional(),
+    isAnonymous: z.boolean().optional(),
+  })
+  .strict();

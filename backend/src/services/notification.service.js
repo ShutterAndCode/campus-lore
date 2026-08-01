@@ -56,23 +56,7 @@ export const markAllNotificationsAsRead = async (userId) => {
   return result.modifiedCount;
 };
 
-export const createNotification = async ({
-  recipient,
-  sender,
-  type,
-  title,
-  message,
-  relatedResource,
-}) => {
-  return Notification.create({
-    recipient,
-    sender: sender || null,
-    type,
-    title,
-    message,
-    relatedResource: relatedResource || null,
-  });
-};
+
 export const createNotification = async ({
   recipient,
   sender,
