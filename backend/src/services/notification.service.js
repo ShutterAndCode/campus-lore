@@ -1,6 +1,6 @@
-import Notification from '../models/notification.model.js';
-import ApiError from '../utils/ApiError.js';
-
+import Notification from "../models/notification.model.js";
+import ApiError from "../utils/ApiError.js";
+import { getIO } from "../socket/socket.js";
 export const getUserNotifications = async (userId, page, limit) => {
   const skip = (page - 1) * limit;
 
@@ -27,11 +27,14 @@ export const markNotificationAsRead = async (notificationId, userId) => {
   const notification = await Notification.findById(notificationId);
 
   if (!notification) {
-    throw new ApiError(404, 'Notification not found');
+    throw new ApiError(404, "Notification not found");
   }
 
   if (notification.recipient.toString() !== userId.toString()) {
-    throw new ApiError(403, 'You are not authorized to update this notification');
+    throw new ApiError(
+      403,
+      "You are not authorized to update this notification",
+    );
   }
 
   if (notification.isRead) {
@@ -47,13 +50,20 @@ export const markNotificationAsRead = async (notificationId, userId) => {
 export const markAllNotificationsAsRead = async (userId) => {
   const result = await Notification.updateMany(
     { recipient: userId, isRead: false },
-    { $set: { isRead: true } }
+    { $set: { isRead: true } },
   );
 
   return result.modifiedCount;
 };
 
-export const createNotification = async ({ recipient, sender, type, title, message, relatedResource }) => {
+export const createNotification = async ({
+  recipient,
+  sender,
+  type,
+  title,
+  message,
+  relatedResource,
+}) => {
   return Notification.create({
     recipient,
     sender: sender || null,
@@ -63,6 +73,30 @@ export const createNotification = async ({ recipient, sender, type, title, messa
     relatedResource: relatedResource || null,
   });
 };
+export const createNotification = async ({
+  recipient,
+  sender,
+  type,
+  title,
+  message,
+  relatedResource,
+}) => {
+  const notification = await Notification.create({
+    recipient,
+    sender: sender || null,
+    type,
+    title,
+    message,
+    relatedResource: relatedResource || null,
+  });
 
+  try {
+    getIO().to(`user:${recipient}`).emit("notification:new", notification);
+  } catch (err) {
+    console.error("Socket emission failed:", err.message);
+  }
+
+  return notification;
+};
 
 //read this one carefully later
