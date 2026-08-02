@@ -86,3 +86,4 @@
 {"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-02 17:37:58"}
 {"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.487 ms","timestamp":"2026-08-02 17:37:58"}
 {"level":"http","message":"GET /api/v1/health 200 170 - 3.427 ms","timestamp":"2026-08-02 17:37:59"}
+{"level":"http","message":"GET /api/v1/health 200 171 - 5.249 ms","timestamp":"2026-08-02 17:53:03"}

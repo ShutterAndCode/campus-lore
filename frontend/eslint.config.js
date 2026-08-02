@@ -1,0 +1,19 @@
+import js from '@eslint/js'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import prettier from 'eslint-config-prettier'
+
+export default [
+  js.configs.recommended,
+  {
+    plugins: {
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': 'warn',
+    },
+  },
+  prettier, // must be last — disables ESLint rules that conflict with Prettier formatting
+]
