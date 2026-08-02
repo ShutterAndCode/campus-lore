@@ -18,8 +18,54 @@ import {
 
 const router = Router();
 
+/**
+ * @swagger
+ * /profile/me:
+ *   get:
+ *     tags: [Profile]
+ *     summary: Get the authenticated user's profile
+ *     responses:
+ *       200:
+ *         description: Profile fetched successfully
+ *       401:
+ *         description: Unauthorized
+ */
+
 router.get("/me", authenticate, getMyProfile);
 
+/**
+ * @swagger
+ * /profile/me:
+ *   patch:
+ *     tags: [Profile]
+ *     summary: Update the authenticated user's profile
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               avatar:
+ *                 type: string
+ *               bio:
+ *                 type: string
+ *               branch:
+ *                 type: string
+ *               batch:
+ *                 type: string
+ *               graduationYear:
+ *                 type: number
+ *     responses:
+ *       200:
+ *         description: Profile updated successfully
+ *       400:
+ *         description: Validation error
+ *       401:
+ *         description: Unauthorized
+ */
 router.patch(
   "/me",
   authenticate,

@@ -1,5 +1,7 @@
 import { Router } from "express";
 
+import {authLimiter} from "../middlewares/rateLimit.middleware.js"
+
 import healthRoutes from "./health.routes.js";
 import authRoutes from "./auth.routes.js";
 import profileRoutes from "./profile.routes.js";
@@ -13,8 +15,10 @@ import reportRoutes from './report.routes.js';
 
 const router = Router();
 
+
+
 router.use("/health", healthRoutes);
-router.use("/auth", authRoutes);
+router.use("/auth",authLimiter, authRoutes);
 router.use("/profile", profileRoutes);
 router.use("/mentorship", mentorshipRoutes);
 router.use("/conversations", conversationRoutes);

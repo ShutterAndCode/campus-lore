@@ -1,0 +1,88 @@
+{"level":"http","message":"GET /api/v1/health 200 171 - 5.963 ms","timestamp":"2026-08-02 16:25:51"}
+{"level":"warn","message":"GET /health -> 404 Route not found - /health","timestamp":"2026-08-02 16:43:02"}
+{"level":"http","message":"GET /health 404 84 - 11.078 ms","timestamp":"2026-08-02 16:43:02"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-02 16:43:02"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 28.242 ms","timestamp":"2026-08-02 16:43:02"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-02 16:43:02"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 2.981 ms","timestamp":"2026-08-02 16:43:02"}
+{"level":"warn","message":"GET /health -> 404 Route not found - /health","timestamp":"2026-08-02 16:44:12"}
+{"level":"http","message":"GET /health 404 84 - 22.932 ms","timestamp":"2026-08-02 16:44:12"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-02 16:44:13"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 15.470 ms","timestamp":"2026-08-02 16:44:13"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-02 16:44:13"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.128 ms","timestamp":"2026-08-02 16:44:13"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-02 16:50:50"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 19.588 ms","timestamp":"2026-08-02 16:50:50"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-02 16:50:50"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.282 ms","timestamp":"2026-08-02 16:50:50"}
+{"level":"http","message":"GET /api/v1/health 200 173 - 17.300 ms","timestamp":"2026-08-02 16:55:12"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-02 16:55:12"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 12.052 ms","timestamp":"2026-08-02 16:55:12"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-02 16:55:12"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.808 ms","timestamp":"2026-08-02 16:55:12"}
+{"level":"http","message":"GET /api/v1/profile/me 200 379 - 79.931 ms","timestamp":"2026-08-02 17:04:24"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 400 : Unrecognized key: \"role\"","timestamp":"2026-08-02 17:04:24"}
+{"level":"http","message":"PATCH /api/v1/profile/me 400 87 - 54.757 ms","timestamp":"2026-08-02 17:04:24"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:07:03"}
+{"level":"http","message":"GET /api/v1/profile/me 401 73 - 56.796 ms","timestamp":"2026-08-02 17:07:03"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:07:03"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 15.820 ms","timestamp":"2026-08-02 17:07:04"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:07:04"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 12.458 ms","timestamp":"2026-08-02 17:07:04"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:12:15"}
+{"level":"http","message":"GET /api/v1/profile/me 401 73 - 27.840 ms","timestamp":"2026-08-02 17:12:15"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:12:15"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 6.187 ms","timestamp":"2026-08-02 17:12:15"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:12:15"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 4.504 ms","timestamp":"2026-08-02 17:12:15"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:24:59"}
+{"level":"http","message":"GET /api/v1/profile/me 401 73 - 31.289 ms","timestamp":"2026-08-02 17:24:59"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:24:59"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 8.737 ms","timestamp":"2026-08-02 17:24:59"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:24:59"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 5.451 ms","timestamp":"2026-08-02 17:24:59"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:27:00"}
+{"level":"http","message":"GET /api/v1/profile/me 401 73 - 31.154 ms","timestamp":"2026-08-02 17:27:00"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:27:00"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 4.504 ms","timestamp":"2026-08-02 17:27:00"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 401 User not found","timestamp":"2026-08-02 17:27:00"}
+{"level":"http","message":"PATCH /api/v1/profile/me 401 73 - 6.231 ms","timestamp":"2026-08-02 17:27:00"}
+{"level":"http","message":"GET /api/v1/profile/me 200 360 - 303.109 ms","timestamp":"2026-08-02 17:32:07"}
+{"level":"http","message":"PATCH /api/v1/profile/me 200 371 - 22.582 ms","timestamp":"2026-08-02 17:32:07"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 400 : Unrecognized key: \"role\"","timestamp":"2026-08-02 17:32:07"}
+{"level":"http","message":"PATCH /api/v1/profile/me 400 87 - 7.877 ms","timestamp":"2026-08-02 17:32:07"}
+{"level":"http","message":"GET /api/v1/profile/me 200 360 - 32.486 ms","timestamp":"2026-08-02 17:32:31"}
+{"level":"http","message":"PATCH /api/v1/profile/me 200 371 - 14.753 ms","timestamp":"2026-08-02 17:32:31"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 400 : Unrecognized key: \"role\"","timestamp":"2026-08-02 17:32:31"}
+{"level":"http","message":"PATCH /api/v1/profile/me 400 87 - 5.830 ms","timestamp":"2026-08-02 17:32:31"}
+{"level":"http","message":"GET /api/v1/profile/me 200 360 - 40.110 ms","timestamp":"2026-08-02 17:33:15"}
+{"level":"http","message":"PATCH /api/v1/profile/me 200 371 - 15.136 ms","timestamp":"2026-08-02 17:33:15"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 400 : Unrecognized key: \"role\"","timestamp":"2026-08-02 17:33:15"}
+{"level":"http","message":"PATCH /api/v1/profile/me 400 87 - 7.620 ms","timestamp":"2026-08-02 17:33:15"}
+{"level":"warn","message":"POST /api/v1/posts -> 400 academicYear: Invalid option: expected one of \"1st\"|\"2nd\"|\"3rd\"|\"4th\", department: Invalid input: expected string, received undefined","timestamp":"2026-08-02 17:36:14"}
+{"level":"http","message":"POST /api/v1/posts 400 200 - 36.531 ms","timestamp":"2026-08-02 17:36:14"}
+{"level":"http","message":"GET /api/v1/posts 200 157 - 8.939 ms","timestamp":"2026-08-02 17:36:14"}
+{"level":"warn","message":"POST /api/v1/posts -> 401 No access token provided","timestamp":"2026-08-02 17:36:14"}
+{"level":"http","message":"POST /api/v1/posts 401 83 - 2.109 ms","timestamp":"2026-08-02 17:36:14"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-02 17:36:15"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 8.975 ms","timestamp":"2026-08-02 17:36:15"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-02 17:36:15"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 2.920 ms","timestamp":"2026-08-02 17:36:15"}
+{"level":"http","message":"GET /api/v1/health 200 170 - 3.511 ms","timestamp":"2026-08-02 17:36:17"}
+{"level":"http","message":"GET /api/v1/profile/me 200 360 - 27.788 ms","timestamp":"2026-08-02 17:36:18"}
+{"level":"http","message":"PATCH /api/v1/profile/me 200 371 - 14.624 ms","timestamp":"2026-08-02 17:36:18"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 400 : Unrecognized key: \"role\"","timestamp":"2026-08-02 17:36:18"}
+{"level":"http","message":"PATCH /api/v1/profile/me 400 87 - 6.671 ms","timestamp":"2026-08-02 17:36:18"}
+{"level":"http","message":"POST /api/v1/posts 201 409 - 41.749 ms","timestamp":"2026-08-02 17:37:54"}
+{"level":"http","message":"GET /api/v1/posts 200 157 - 9.930 ms","timestamp":"2026-08-02 17:37:54"}
+{"level":"warn","message":"POST /api/v1/posts -> 401 No access token provided","timestamp":"2026-08-02 17:37:54"}
+{"level":"http","message":"POST /api/v1/posts 401 83 - 3.347 ms","timestamp":"2026-08-02 17:37:54"}
+{"level":"http","message":"GET /api/v1/profile/me 200 360 - 39.671 ms","timestamp":"2026-08-02 17:37:56"}
+{"level":"http","message":"PATCH /api/v1/profile/me 200 371 - 13.397 ms","timestamp":"2026-08-02 17:37:57"}
+{"level":"warn","message":"PATCH /api/v1/profile/me -> 400 : Unrecognized key: \"role\"","timestamp":"2026-08-02 17:37:57"}
+{"level":"http","message":"PATCH /api/v1/profile/me 400 87 - 8.130 ms","timestamp":"2026-08-02 17:37:57"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-02 17:37:58"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 9.024 ms","timestamp":"2026-08-02 17:37:58"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-02 17:37:58"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.487 ms","timestamp":"2026-08-02 17:37:58"}
+{"level":"http","message":"GET /api/v1/health 200 170 - 3.427 ms","timestamp":"2026-08-02 17:37:59"}

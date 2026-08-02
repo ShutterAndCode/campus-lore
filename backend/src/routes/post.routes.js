@@ -32,7 +32,79 @@ import { createReportController } from '../controllers/report.controller.js';
 
 const router = Router();
 
+/**
+ * @swagger
+ * /posts:
+ *   get:
+ *     tags: [Posts]
+ *     summary: Get paginated experience posts feed
+ *     security: []
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *       - in: query
+ *         name: academicYear
+ *         schema:
+ *           type: string
+ *           enum: [1st, 2nd, 3rd, 4th]
+ *       - in: query
+ *         name: department
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: tag
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Posts fetched successfully
+ */
+
 router.get("/", validate(getPostsQuerySchema, "query"), getPostsController);
+
+/**
+ * @swagger
+ * /posts:
+ *   post:
+ *     tags: [Posts]
+ *     summary: Create a new experience post
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [title, content, academicYear, department]
+ *             properties:
+ *               title:
+ *                 type: string
+ *               content:
+ *                 type: string
+ *               academicYear:
+ *                 type: string
+ *                 enum: [1st, 2nd, 3rd, 4th]
+ *               department:
+ *                 type: string
+ *               tags:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *               isAnonymous:
+ *                 type: boolean
+ *     responses:
+ *       201:
+ *         description: Post created successfully
+ *       400:
+ *         description: Validation error
+ *       401:
+ *         description: Unauthorized
+ */
 
 router.post(
   "/",

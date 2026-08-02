@@ -19,3 +19,4 @@ export const notificationIdParamsSchema =
   objectIdParamsSchema("notificationId");
 export const messageIdParamsSchema = objectIdParamsSchema("messageId");
 export const userIdParamsSchema = objectIdParamsSchema("userId");
+export const reportIdParamsSchema = objectIdParamsSchema('reportId');

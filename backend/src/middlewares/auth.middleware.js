@@ -2,6 +2,7 @@ import User from "../models/user.model.js";
 import ApiError from "../utils/ApiError.js";
 import asyncHandler from "../utils/asyncHandler.js";
 import { verifyAccessToken } from "../utils/jwt.js";
+import mongoose from "mongoose";
 
 export const authenticate = asyncHandler(async (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -15,7 +16,7 @@ export const authenticate = asyncHandler(async (req, res, next) => {
   const payload = verifyAccessToken(token);
 
   const user = await User.findById(payload.id);
-
+  console.log("Found user:", user?._id);
   if (!user) {
     throw new ApiError(401, "User not found");
   }

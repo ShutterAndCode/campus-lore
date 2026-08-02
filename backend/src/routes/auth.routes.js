@@ -8,6 +8,18 @@ import { getMe, refresh, logout } from '../controllers/auth.controller.js';
 
 const router = Router();
 
+/**
+ * @swagger
+ * /auth/google:
+ *   get:
+ *     tags: [Auth]
+ *     summary: Initiate Google OAuth login
+ *     security: []
+ *     responses:
+ *       302:
+ *         description: Redirects to Google's OAuth consent screen
+ */
+
 router.get(
   "/google",
   passport.authenticate("google", {

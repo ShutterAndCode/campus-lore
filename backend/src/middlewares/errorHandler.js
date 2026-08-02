@@ -1,7 +1,8 @@
 import ApiError from "../utils/ApiError.js";
 import env from "../config/env.js";
+import { logger } from "../config/logger.js";
 
-// eslint-disable-next-line no-unused-vars wtf??
+// eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, next) => {
   const error =
     err instanceof ApiError
@@ -13,9 +14,13 @@ const errorHandler = (err, req, res, next) => {
           err.stack
         );
 
-  console.error(
-    `[error] ${req.method} ${req.originalUrl} -> ${error.statusCode} ${error.message}`
-  );
+  const logMessage = `${req.method} ${req.originalUrl} -> ${error.statusCode} ${error.message}`;
+
+  if (err instanceof ApiError) {
+    logger.warn(logMessage);
+  } else {
+    logger.error(logMessage, { stack: error.stack });
+  }
 
   return res.status(error.statusCode).json({
     success: false,
