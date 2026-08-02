@@ -27,6 +27,8 @@ import {
   postIdParamsSchema,
   commentIdParamsSchema,
 } from "../validators/common.validator.js";
+import { createReportBodySchema } from '../validators/report.validator.js';
+import { createReportController } from '../controllers/report.controller.js';
 
 const router = Router();
 
@@ -72,6 +74,13 @@ router.delete(
   authenticate,
   validate(postIdParamsSchema, "params"),
   deletePostController,
+);
+router.post(
+  '/:postId/report',
+  authenticate,
+  validate(postIdParamsSchema, 'params'),
+  validate(createReportBodySchema, 'body'),
+  createReportController
 );
 
 export default router;
