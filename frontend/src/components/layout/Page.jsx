@@ -1,4 +1,4 @@
-export default function PageWrapper({ children, className = "" }) {
+export default function Page({ children, className = "" }) {
   return (
     <main className={`min-h-screen bg-background py-8 ${className}`}>
       {children}
