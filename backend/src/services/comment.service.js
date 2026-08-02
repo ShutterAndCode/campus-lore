@@ -67,4 +67,28 @@ export const getPostComments = async (postId) => {
     replies: repliesByParent[comment._id.toString()] || [],
   }));
 };
+export const deleteComment = async (postId, commentId, userId) => {
+  const post = await ExperiencePost.findById(postId);
+  if (!post) {
+    throw new ApiError(404, 'Post not found');
+  }
+
+  const comment = await Comment.findById(commentId);
+  if (!comment) {
+    throw new ApiError(404, 'Comment not found');
+  }
+
+  if (comment.post.toString() !== postId.toString()) {
+    throw new ApiError(400, 'Comment does not belong to the specified post');
+  }
+
+  if (comment.author.toString() !== userId.toString()) {
+    throw new ApiError(403, 'You are not authorized to delete this comment');
+  }
+
+  await comment.deleteOne();
+
+  return { deleted: true };
+};
 //read this,imp to understand
+// add decrement count when deleting post

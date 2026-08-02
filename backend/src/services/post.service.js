@@ -1,6 +1,8 @@
 import ExperiencePost from '../models/experiencePost.model.js';
 import { PUBLIC_PROFILE_FIELDS } from "./profile.service.js";
+import Comment from '../models/comment.model.js';
 
+import PostReaction from '../models/postReaction.model.js';
 const normalizeTags = (tags = []) => {
   const normalized = tags.map((tag) => tag.trim().toLowerCase());
   return [...new Set(normalized)];
@@ -47,4 +49,20 @@ export const getPosts = async ({ page, limit, academicYear, department, tag }) =
       totalPages: Math.ceil(total / limit),
     },
   };
+};
+export const deletePost = async (postId, userId) => {
+  const post = await ExperiencePost.findById(postId);
+  if (!post) {
+    throw new ApiError(404, 'Post not found');
+  }
+
+  if (post.author.toString() !== userId.toString()) {
+    throw new ApiError(403, 'You are not authorized to delete this post');
+  }
+
+  await Comment.deleteMany({ post: postId });
+  await PostReaction.deleteMany({ post: postId });
+  await post.deleteOne();
+
+  return { deleted: true };
 };

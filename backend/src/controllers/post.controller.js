@@ -10,3 +10,8 @@ export const getPostsController = asyncHandler(async (req, res) => {
   const result = await getPosts(req.query);
   res.status(200).json(new ApiResponse(200, result, 'Posts fetched successfully'));
 });
+export const deletePostController = asyncHandler(async (req, res) => {
+  const { postId } = req.params;
+  const result = await deletePost(postId, req.user._id);
+  res.status(200).json(new ApiResponse(200, result, 'Post deleted successfully'));
+});

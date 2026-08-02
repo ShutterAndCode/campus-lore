@@ -10,6 +10,7 @@ import {
 import {
   createPostController,
   getPostsController,
+  deletePostController,
 } from "../controllers/post.controller.js";
 
 import { createReactionBodySchema } from "../validators/postReaction.validator.js";
@@ -19,23 +20,23 @@ import { createCommentBodySchema } from "../validators/comment.validator.js";
 import {
   createCommentController,
   getPostCommentsController,
+  deleteCommentController,
 } from "../controllers/comment.controller.js";
 
-import { postIdParamsSchema } from "../validators/common.validator.js";
+import {
+  postIdParamsSchema,
+  commentIdParamsSchema,
+} from "../validators/common.validator.js";
 
 const router = Router();
 
-router.get(
-  "/",
-  validate(getPostsQuerySchema, "query"),
-  getPostsController
-);
+router.get("/", validate(getPostsQuerySchema, "query"), getPostsController);
 
 router.post(
   "/",
   authenticate,
   validate(createPostSchema),
-  createPostController
+  createPostController,
 );
 
 router.post(
@@ -43,7 +44,7 @@ router.post(
   authenticate,
   validate(postIdParamsSchema, "params"),
   validate(createReactionBodySchema, "body"),
-  toggleReactionController
+  toggleReactionController,
 );
 
 router.post(
@@ -51,13 +52,26 @@ router.post(
   authenticate,
   validate(postIdParamsSchema, "params"),
   validate(createCommentBodySchema, "body"),
-  createCommentController
+  createCommentController,
 );
 
 router.get(
   "/:postId/comments",
   validate(postIdParamsSchema, "params"),
-  getPostCommentsController
+  getPostCommentsController,
+);
+router.delete(
+  "/:postId/comments/:commentId",
+  authenticate,
+  validate(postIdParamsSchema, "params"),
+  validate(commentIdParamsSchema, "params"),
+  deleteCommentController,
+);
+router.delete(
+  "/:postId",
+  authenticate,
+  validate(postIdParamsSchema, "params"),
+  deletePostController,
 );
 
 export default router;
