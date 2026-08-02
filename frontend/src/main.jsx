@@ -11,18 +11,21 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 
 import "./index.css";
+import AuthProvider from "./context/AuthProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-  <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-    <TooltipProvider>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <Toaster />
-    </QueryClientProvider>
-    </TooltipProvider>
-  </ThemeProvider>
-</StrictMode>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <TooltipProvider>
+        <AuthProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+            <Toaster />
+          </QueryClientProvider>
+        </AuthProvider>
+      </TooltipProvider>
+    </ThemeProvider>
+  </StrictMode>
 );
 // defaultTheme="system" — respects OS preference on first visit, per your Brand Guidelines' accessibility/user-respect principles.
 // enableSystem — enables listening to OS-level theme changes live (user changes OS theme → app follows, without reload).
