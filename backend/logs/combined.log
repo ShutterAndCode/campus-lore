@@ -87,3 +87,128 @@
 {"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.487 ms","timestamp":"2026-08-02 17:37:58"}
 {"level":"http","message":"GET /api/v1/health 200 170 - 3.427 ms","timestamp":"2026-08-02 17:37:59"}
 {"level":"http","message":"GET /api/v1/health 200 171 - 5.249 ms","timestamp":"2026-08-02 17:53:03"}
+{"level":"warn","message":"GET /api/v1 -> 404 Route not found - /api/v1","timestamp":"2026-08-03 20:47:45"}
+{"level":"http","message":"GET /api/v1 404 - - 14.491 ms","timestamp":"2026-08-03 20:47:45"}
+{"level":"warn","message":"GET /api/v1 -> 404 Route not found - /api/v1","timestamp":"2026-08-03 20:50:04"}
+{"level":"http","message":"GET /api/v1 404 - - 6.664 ms","timestamp":"2026-08-03 20:50:04"}
+{"level":"warn","message":"GET /api/v1/users/me -> 404 Route not found - /api/v1/users/me","timestamp":"2026-08-03 20:52:34"}
+{"level":"http","message":"GET /api/v1/users/me 404 - - 15.672 ms","timestamp":"2026-08-03 20:52:34"}
+{"level":"warn","message":"GET /api/v1/users/me -> 404 Route not found - /api/v1/users/me","timestamp":"2026-08-03 20:57:30"}
+{"level":"http","message":"GET /api/v1/users/me 404 - - 3.559 ms","timestamp":"2026-08-03 20:57:30"}
+{"level":"warn","message":"GET /api/v1/users/me -> 404 Route not found - /api/v1/users/me","timestamp":"2026-08-03 21:55:12"}
+{"level":"http","message":"GET /api/v1/users/me 404 - - 5.529 ms","timestamp":"2026-08-03 21:55:12"}
+{"level":"warn","message":"GET /api/v1/users/me -> 404 Route not found - /api/v1/users/me","timestamp":"2026-08-03 21:55:12"}
+{"level":"http","message":"GET /api/v1/users/me 404 - - 6.783 ms","timestamp":"2026-08-03 21:55:12"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:01:02"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 15.940 ms","timestamp":"2026-08-03 22:01:02"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:01:02"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 5.716 ms","timestamp":"2026-08-03 22:01:02"}
+{"level":"http","message":"POST /api/v1/auth/refresh 200 287 - 622.584 ms","timestamp":"2026-08-03 22:20:53"}
+{"level":"http","message":"POST /api/v1/auth/refresh 200 287 - 1137.393 ms","timestamp":"2026-08-03 22:20:53"}
+{"level":"http","message":"GET /api/v1/profile/me 200 449 - 784.691 ms","timestamp":"2026-08-03 22:20:54"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 184.468 ms","timestamp":"2026-08-03 22:20:54"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 163.813 ms","timestamp":"2026-08-03 22:21:15"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 109.816 ms","timestamp":"2026-08-03 22:21:15"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 139.915 ms","timestamp":"2026-08-03 22:21:24"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 162.843 ms","timestamp":"2026-08-03 22:21:24"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:21:50"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:21:50"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 3.691 ms","timestamp":"2026-08-03 22:21:50"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 1.428 ms","timestamp":"2026-08-03 22:21:50"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:21:50"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 2.910 ms","timestamp":"2026-08-03 22:21:50"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:21:50"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 1.369 ms","timestamp":"2026-08-03 22:21:50"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:21:50"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 1.727 ms","timestamp":"2026-08-03 22:21:50"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:22:05"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:22:05"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 1.645 ms","timestamp":"2026-08-03 22:22:05"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 2.473 ms","timestamp":"2026-08-03 22:22:05"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:22:05"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 1.830 ms","timestamp":"2026-08-03 22:22:05"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:22:05"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 2.038 ms","timestamp":"2026-08-03 22:22:05"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:22:05"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 2.048 ms","timestamp":"2026-08-03 22:22:05"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:22:24"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 2.466 ms","timestamp":"2026-08-03 22:22:24"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:22:24"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 1.215 ms","timestamp":"2026-08-03 22:22:24"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:22:24"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 1.464 ms","timestamp":"2026-08-03 22:22:24"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:22:25"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 1.082 ms","timestamp":"2026-08-03 22:22:25"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 1.799 ms","timestamp":"2026-08-03 22:22:25"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 0.982 ms","timestamp":"2026-08-03 22:24:09"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 0.648 ms","timestamp":"2026-08-03 22:24:09"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:24:12"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 0.961 ms","timestamp":"2026-08-03 22:24:12"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:24:12"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 0.691 ms","timestamp":"2026-08-03 22:24:12"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 7.809 ms","timestamp":"2026-08-03 22:24:12"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 0.638 ms","timestamp":"2026-08-03 22:24:12"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 1.989 ms","timestamp":"2026-08-03 22:25:00"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 0.720 ms","timestamp":"2026-08-03 22:25:03"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:25:09"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 1.972 ms","timestamp":"2026-08-03 22:25:09"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:25:09"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 4.601 ms","timestamp":"2026-08-03 22:25:09"}
+{"level":"http","message":"POST /api/v1/auth/refresh 429 57 - 1.135 ms","timestamp":"2026-08-03 22:25:10"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 306.163 ms","timestamp":"2026-08-03 22:34:56"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 129.740 ms","timestamp":"2026-08-03 22:34:56"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 144.693 ms","timestamp":"2026-08-03 22:35:22"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 110.407 ms","timestamp":"2026-08-03 22:35:23"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 207.025 ms","timestamp":"2026-08-03 22:35:57"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 147.050 ms","timestamp":"2026-08-03 22:35:57"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 155.727 ms","timestamp":"2026-08-03 22:36:40"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 104.357 ms","timestamp":"2026-08-03 22:36:40"}
+{"level":"http","message":"POST /api/v1/auth/refresh 200 287 - 68.672 ms","timestamp":"2026-08-03 22:37:24"}
+{"level":"http","message":"POST /api/v1/auth/refresh 200 287 - 85.620 ms","timestamp":"2026-08-03 22:37:24"}
+{"level":"http","message":"GET /api/v1/profile/me 200 482 - 461.858 ms","timestamp":"2026-08-03 22:37:24"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 120.747 ms","timestamp":"2026-08-03 22:37:25"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:38:09"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 2.448 ms","timestamp":"2026-08-03 22:38:09"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:38:09"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 1.540 ms","timestamp":"2026-08-03 22:38:09"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:38:09"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 1.608 ms","timestamp":"2026-08-03 22:38:09"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:38:09"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 1.567 ms","timestamp":"2026-08-03 22:38:09"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:38:09"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 1.235 ms","timestamp":"2026-08-03 22:38:09"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:40:14"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 1.984 ms","timestamp":"2026-08-03 22:40:14"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:40:14"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 5.127 ms","timestamp":"2026-08-03 22:40:14"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:40:14"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 5.479 ms","timestamp":"2026-08-03 22:40:14"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:40:14"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 3.880 ms","timestamp":"2026-08-03 22:40:15"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 22:40:15"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 2.089 ms","timestamp":"2026-08-03 22:40:15"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 22:55:40"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 26.750 ms","timestamp":"2026-08-03 22:55:40"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-03 22:55:48"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.147 ms","timestamp":"2026-08-03 22:55:48"}
+{"level":"warn","message":"GET /api/v1/auth/google/failure -> 401 Google authentication failed or domain not permitted","timestamp":"2026-08-03 22:55:51"}
+{"level":"http","message":"GET /api/v1/auth/google/failure 401 111 - 3.336 ms","timestamp":"2026-08-03 22:55:51"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 23:01:24"}
+{"level":"http","message":"GET /api/v1/profile/me 401 83 - 26.877 ms","timestamp":"2026-08-03 23:01:24"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Invalid or expired access token","timestamp":"2026-08-03 23:01:31"}
+{"level":"http","message":"GET /api/v1/profile/me 401 90 - 3.457 ms","timestamp":"2026-08-03 23:01:31"}
+{"level":"http","message":"GET /api/v1/auth/google/failure 302 56 - 2.206 ms","timestamp":"2026-08-03 23:01:33"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 224.072 ms","timestamp":"2026-08-03 23:14:09"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 229.791 ms","timestamp":"2026-08-03 23:14:10"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 199.665 ms","timestamp":"2026-08-03 23:14:25"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 145.772 ms","timestamp":"2026-08-03 23:14:25"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 23:15:41"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 4.630 ms","timestamp":"2026-08-03 23:15:41"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 23:15:41"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 4.804 ms","timestamp":"2026-08-03 23:15:41"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 23:15:41"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 3.185 ms","timestamp":"2026-08-03 23:15:41"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-03 23:15:41"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 2.635 ms","timestamp":"2026-08-03 23:15:41"}
+{"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 23:15:41"}
+{"level":"http","message":"POST /api/v1/auth/refresh 401 - - 3.786 ms","timestamp":"2026-08-03 23:15:41"}

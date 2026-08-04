@@ -1,7 +1,7 @@
 import { Router } from "express";
 import passport from "../config/passport.js";
+import env from "../config/env.js";
 import { googleCallback } from "../controllers/auth.controller.js";
-import ApiError from "../utils/ApiError.js";
 import { authenticate } from '../middlewares/auth.middleware.js';
 import { getMe, refresh, logout } from '../controllers/auth.controller.js';
 
@@ -38,10 +38,12 @@ router.get(
   googleCallback
 );
 
-router.get("/google/failure", (req, res, next) => {
-  return next(
-    new ApiError(401, "Google authentication failed or domain not permitted")
-  );
+router.get("/google/failure", (req, res) => {
+  const frontendUrl = new URL(env.FRONTEND_OAUTH_SUCCESS_URL);
+  frontendUrl.pathname = "/unauthorized";
+  frontendUrl.hash = "";
+
+  return res.redirect(frontendUrl.toString());
 });
 
 

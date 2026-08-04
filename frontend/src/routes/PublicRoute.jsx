@@ -1,22 +1,18 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
-import Center from "@/components/layout/Center";
-import Spinner from "@/components/feedback/Spinner";
+import { Navigate, Outlet } from "react-router-dom";
 
-export default function PublicRoute({ children }) {
+import FullPageLoader from "@/components/feedback/FullPageLoader";
+import { useAuth } from "@/hooks/useAuth";
+
+export default function PublicRoute() {
   const { isAuthenticated, isLoading } = useAuth();
 
   if (isLoading) {
-    return (
-      <Center className="min-h-[calc(100vh-4rem)]">
-        <Spinner size={28} />
-      </Center>
-    );
+    return <FullPageLoader message="Checking authentication..." />;
   }
 
   if (isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
-  return children;
+  return <Outlet />;
 }

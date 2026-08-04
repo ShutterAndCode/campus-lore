@@ -1,20 +1,72 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import AppLayout from "../components/layout/AppLayout.jsx";
+
 import Home from "../pages/Home.jsx";
 import Login from "../pages/Login.jsx";
+import Profile from "../pages/Profile.jsx";
+import EditProfile from "../pages/EditProfile.jsx";
 import Unauthorized from "../pages/Unauthorized.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import AuthCallback from "../pages/AuthCallback.jsx";
+
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import PublicRoute from "./PublicRoute.jsx";
+
+import AuthProvider from "../context/AuthProvider.jsx";
+
 export const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <AuthProvider>
+        <AppLayout />
+      </AuthProvider>
+    ),
     children: [
-  { path: "/", element: <ProtectedRoute><Home /></ProtectedRoute> },
-  { path: "/login", element: <PublicRoute><Login /></PublicRoute> },
-  { path: "/unauthorized", element: <Unauthorized /> },
-  { path: "*", element: <NotFound /> },
-],
+      // Public routes
+      {
+        path: "/login",
+        element: (
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        ),
+      },
+
+      {
+        path: "/auth/callback",
+        element: <AuthCallback />,
+      },
+
+      {
+        path: "/unauthorized",
+        element: <Unauthorized />,
+      },
+
+      // Protected routes
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "/",
+            element: <Home />,
+          },
+          {
+            path: "/profile",
+            element: <Profile />,
+          },
+          {
+            path: "/profile/edit",
+            element: <EditProfile />,
+          },
+        ],
+      },
+
+      // 404
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
   },
 ]);

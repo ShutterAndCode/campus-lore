@@ -1,49 +1,72 @@
-import { useEffect, useState } from "react";
-import api, { setUnauthorizedHandler } from "@/lib/axios";
-import { API_ENDPOINTS } from "@/lib/apiConstants";
-import AuthContext from "./AuthContext";
+import { useEffect, useMemo, useState } from "react";
+
+import AuthContext from "@/context/AuthContext";
+import { getCurrentUser, logout as logoutApi, refreshAccessToken } from "@/api/auth.api";
+import { setAuthToken } from "@/lib/axios";
+
+const ACCESS_TOKEN_KEY = "accessToken";
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
+    async function loadCurrentUser() {
+      let token = localStorage.getItem(ACCESS_TOKEN_KEY);
 
-    api
-      .get(API_ENDPOINTS.AUTH.ME)
-      .then((response) => {
-        if (isMounted) setUser(response.data);
-      })
-      .catch(() => {
-        if (isMounted) setUser(null);
-      })
-      .finally(() => {
-        if (isMounted) setIsLoading(false);
-      });
+      if (!token) {
+        try {
+          token = await refreshAccessToken();
+          if (token) {
+            setAuthToken(token);
+          }
+        } catch {
+          setAuthToken(null);
+          localStorage.removeItem(ACCESS_TOKEN_KEY);
+        }
+      } else {
+        setAuthToken(token);
+      }
 
-    return () => {
-      isMounted = false;
-    };
+      try {
+        const currentUser = await getCurrentUser();
+        setUser(currentUser);
+        setIsAuthenticated(true);
+      } catch (error) {
+        setUser(null);
+        setIsAuthenticated(false);
+        setAuthToken(null);
+        localStorage.removeItem(ACCESS_TOKEN_KEY);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    loadCurrentUser();
   }, []);
 
-  useEffect(() => {
-    setUnauthorizedHandler(() => {
-      setUser(null);
-    });
-  }, []);
   const logout = async () => {
     try {
-      await api.post(API_ENDPOINTS.AUTH.LOGOUT);
+      await logoutApi();
+    } catch (error) {
+      console.error("Logout failed", error);
     } finally {
       setUser(null);
+      setIsAuthenticated(false);
+      setAuthToken(null);
+      localStorage.removeItem(ACCESS_TOKEN_KEY);
     }
   };
-  const value = {
-    user,
-    isAuthenticated: !!user,
-    isLoading,
-  };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  const value = useMemo(
+    () => ({ user, isAuthenticated, isLoading, logout }),
+    [user, isAuthenticated, isLoading]
+  );
+
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  );
 }

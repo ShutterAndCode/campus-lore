@@ -1,23 +1,19 @@
-import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
-import Center from "@/components/layout/Center";
-import Spinner from "@/components/feedback/Spinner";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
-export default function ProtectedRoute({ children }) {
+import FullPageLoader from "@/components/feedback/FullPageLoader";
+import { useAuth } from "@/hooks/useAuth";
+
+export default function ProtectedRoute() {
   const { isAuthenticated, isLoading } = useAuth();
   const location = useLocation();
 
   if (isLoading) {
-    return (
-      <Center className="min-h-[calc(100vh-4rem)]">
-        <Spinner size={28} />
-      </Center>
-    );
+    return <FullPageLoader message="Checking authentication..." />;
   }
 
   if (!isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
-  return children;
+  return <Outlet />;
 }

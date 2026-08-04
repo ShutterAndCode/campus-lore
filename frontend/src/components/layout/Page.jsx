@@ -1,7 +1,14 @@
-export default function Page({ children, className = "" }) {
+import { cn } from "@/lib/utils";
+
+export default function Page({ children, className }) {
   return (
-    <main className={`min-h-screen bg-background py-8 ${className}`}>
+    <div
+      className={cn(
+        "bg-background py-8",
+        className
+      )}
+    >
       {children}
-    </main>
+    </div>
   );
 }
