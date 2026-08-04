@@ -1,7 +1,15 @@
 import env from "../config/env.js";
+
 import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
 import asyncHandler from "../utils/asyncHandler.js";
+
+import {
+  setAccessTokenCookie,
+  setRefreshTokenCookie,
+  clearAuthCookies,
+} from "../utils/cookies.js";
+
 import {
   generateAuthTokens,
   refreshAccessToken,
@@ -18,16 +26,10 @@ export const googleCallback = asyncHandler(async (req, res) => {
 
   const { accessToken, refreshToken } = await generateAuthTokens(req.user);
 
-  res.cookie("refreshToken", refreshToken, {
-    httpOnly: true,
-    secure: env.NODE_ENV === "production",
-    sameSite: "lax",
-    maxAge: 7 * 24 * 60 * 60 * 1000,
-  });
+  setAccessTokenCookie(res, accessToken);
+  setRefreshTokenCookie(res, refreshToken);
 
-  const redirectUrl = `${env.FRONTEND_OAUTH_SUCCESS_URL}#accessToken=${accessToken}`;
-
-  return res.redirect(redirectUrl);
+  return res.redirect(env.FRONTEND_OAUTH_SUCCESS_URL);
 });
 
 /**
@@ -45,23 +47,25 @@ export const getMe = asyncHandler(async (req, res) => {
 export const refresh = asyncHandler(async (req, res) => {
   const accessToken = await refreshAccessToken(req.cookies.refreshToken);
 
-  return res
-    .status(200)
-    .json(new ApiResponse(200, { accessToken }, "Access token refreshed"));
+  setAccessTokenCookie(res, accessToken);
+
+  return res.status(200).json(
+    new ApiResponse(
+      200,
+      null,
+      "Access token refreshed successfully"
+    )
+  );
 });
 
 /**
  * Logs the user out by revoking the refresh token
- * and clearing the refresh token cookie.
+ * and clearing authentication cookies.
  */
 export const logout = asyncHandler(async (req, res) => {
   await logoutUser(req.cookies.refreshToken);
 
-  res.clearCookie("refreshToken", {
-    httpOnly: true,
-    secure: env.NODE_ENV === "production",
-    sameSite: "lax",
-  });
+  clearAuthCookies(res);
 
   return res
     .status(200)

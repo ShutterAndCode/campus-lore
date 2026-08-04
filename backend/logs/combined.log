@@ -231,3 +231,10 @@
 {"level":"http","message":"GET /api/v1/profile/me 401 - - 4.771 ms","timestamp":"2026-08-04 23:12:50"}
 {"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-04 23:14:26"}
 {"level":"http","message":"GET /api/v1/profile/me 401 - - 2.108 ms","timestamp":"2026-08-04 23:14:26"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Authentication required","timestamp":"2026-08-04 23:26:23"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 59.008 ms","timestamp":"2026-08-04 23:26:23"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 4.178 ms","timestamp":"2026-08-04 23:26:26"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIBGlGxnVTRmEip92xrcrQLE-SIjtm_vm-Q_bnJkDLddVTbJ8tvp4ecDKKVqbhQHng&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none 302 64 - 1052.879 ms","timestamp":"2026-08-04 23:27:00"}
+{"level":"http","message":"GET /api/v1/profile/me 200 449 - 154.040 ms","timestamp":"2026-08-04 23:27:03"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 127.913 ms","timestamp":"2026-08-04 23:27:03"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 129.017 ms","timestamp":"2026-08-04 23:27:03"}
