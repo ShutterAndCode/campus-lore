@@ -1,16 +1,16 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { updateCurrentUser } from "@/api/user.api";
-import { QUERY_KEYS } from "@/lib/queryKeys";
-import { queryClient } from "@/lib/queryClient";
+import { updateCurrentUser } from "@/auth";
 
-export function useUpdateProfile() {
+export default function useUpdateProfile() {
+  const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn: updateCurrentUser,
 
     onSuccess: (updatedUser) => {
       queryClient.setQueryData(
-        QUERY_KEYS.USER.ME,
+        ["auth", "currentUser"],
         updatedUser
       );
     },

@@ -1,18 +1,19 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
-import FullPageLoader from "@/components/feedback/FullPageLoader";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/auth";
 
 export default function ProtectedRoute() {
-  const { isAuthenticated, isLoading } = useAuth();
-  const location = useLocation();
+  const {
+    isAuthenticated,
+    isLoading,
+  } = useAuth();
 
   if (isLoading) {
-    return <FullPageLoader message="Checking authentication..." />;
+    return null;
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/login" replace />;
   }
 
   return <Outlet />;

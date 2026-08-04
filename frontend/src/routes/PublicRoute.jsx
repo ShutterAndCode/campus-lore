@@ -1,18 +1,22 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-import FullPageLoader from "@/components/feedback/FullPageLoader";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/auth";
 
-export default function PublicRoute() {
-  const { isAuthenticated, isLoading } = useAuth();
+export default function PublicRoute({
+  children,
+}) {
+  const {
+    isAuthenticated,
+    isLoading,
+  } = useAuth();
 
   if (isLoading) {
-    return <FullPageLoader message="Checking authentication..." />;
+    return null;
   }
 
   if (isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
-  return <Outlet />;
+  return children;
 }

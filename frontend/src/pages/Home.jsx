@@ -1,6 +1,6 @@
 import { Compass, PenLine, Users } from "lucide-react";
 
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/auth";
 
 import CampusPulse from "@/components/campus-pulse/CampusPulse";
 import Container from "@/components/layout/Container";

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { useProfile } from "@/hooks/useProfile";
+
 
 import { getInitials } from "@/lib/user";
 
@@ -18,6 +18,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useAuth } from "@/auth";
 
 const PROFILE_STATS = [
   { label: "Stories Written", value: 0 },
@@ -74,7 +75,7 @@ export default function Profile() {
     data: profile,
     isLoading,
     isError,
-  } = useProfile();
+  } = useAuth();
 
   if (isLoading) {
     return <ProfileSkeleton />;

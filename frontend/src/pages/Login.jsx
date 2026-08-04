@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { loginWithGoogle } from "@/api/auth.api";
+import { loginWithGoogle } from "@/auth";
 
 import Center from "@/components/layout/Center";
 import Page from "@/components/layout/Page";
@@ -9,13 +9,9 @@ import { Button } from "@/components/ui/button";
 export default function Login() {
   const [isRedirecting, setIsRedirecting] = useState(false);
 
-const handleGoogleLogin = () => {
-  try {
-    setIsRedirecting(true);
-    loginWithGoogle();
-  } catch {
-    setIsRedirecting(false);
-  }
+const handleLogin = () => {
+  window.location.href =
+    `${import.meta.env.VITE_API_BASE_URL}/auth/google`;
 };
 
   return (
@@ -35,7 +31,7 @@ const handleGoogleLogin = () => {
           <Button
             type="button"
             className="w-full"
-            onClick={handleGoogleLogin}
+            onClick={handleLogin}
             disabled={isRedirecting}
           >
             {isRedirecting

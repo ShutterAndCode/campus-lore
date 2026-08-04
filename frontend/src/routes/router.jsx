@@ -13,7 +13,7 @@ import AuthCallback from "../pages/AuthCallback.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import PublicRoute from "./PublicRoute.jsx";
 
-import AuthProvider from "../context/AuthProvider.jsx";
+import { AuthProvider } from "@/auth";
 
 export const router = createBrowserRouter([
   {

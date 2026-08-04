@@ -212,3 +212,22 @@
 {"level":"http","message":"GET /api/v1/profile/me 401 - - 2.635 ms","timestamp":"2026-08-03 23:15:41"}
 {"level":"warn","message":"POST /api/v1/auth/refresh -> 401 No refresh token provided","timestamp":"2026-08-03 23:15:41"}
 {"level":"http","message":"POST /api/v1/auth/refresh 401 - - 3.786 ms","timestamp":"2026-08-03 23:15:41"}
+{"level":"warn","message":"GET / -> 404 Route not found - /","timestamp":"2026-08-04 22:32:09"}
+{"level":"http","message":"GET / 404 - - 6.704 ms","timestamp":"2026-08-04 22:32:09"}
+{"level":"warn","message":"GET /favicon.ico -> 404 Route not found - /favicon.ico","timestamp":"2026-08-04 22:32:10"}
+{"level":"http","message":"GET /favicon.ico 404 - - 1.184 ms","timestamp":"2026-08-04 22:32:10"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 7.832 ms","timestamp":"2026-08-04 22:32:21"}
+{"level":"warn","message":"GET /.well-known/appspecific/com.chrome.devtools.json -> 404 Route not found - /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-08-04 22:32:33"}
+{"level":"http","message":"GET /.well-known/appspecific/com.chrome.devtools.json 404 - - 1.135 ms","timestamp":"2026-08-04 22:32:33"}
+{"level":"warn","message":"GET /.well-known/appspecific/com.chrome.devtools.json -> 404 Route not found - /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-08-04 22:32:33"}
+{"level":"http","message":"GET /.well-known/appspecific/com.chrome.devtools.json 404 - - 2.902 ms","timestamp":"2026-08-04 22:32:33"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-04 23:10:30"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 2.944 ms","timestamp":"2026-08-04 23:10:30"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 1.030 ms","timestamp":"2026-08-04 23:10:34"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIDaOhX9r6hRqEQRiczP0hrrArSq4tYTaCOyy7fpk-LRM-jVPrxkXZGaxBypeP7wcA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent 302 270 - 1311.258 ms","timestamp":"2026-08-04 23:12:49"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-04 23:12:49"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 2.019 ms","timestamp":"2026-08-04 23:12:49"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-04 23:12:50"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 4.771 ms","timestamp":"2026-08-04 23:12:50"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 No access token provided","timestamp":"2026-08-04 23:14:26"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 2.108 ms","timestamp":"2026-08-04 23:14:26"}

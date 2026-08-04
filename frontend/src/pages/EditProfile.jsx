@@ -6,8 +6,8 @@ import { toast } from "sonner";
 
 import { profileSchema } from "@/lib/profileSchema";
 
-import { useProfile } from "@/hooks/useProfile";
-import { useUpdateProfile } from "@/hooks/useUpdateProfile";
+// import { useProfile } from "@/hooks/useProfile";
+import useUpdateProfile from "@/hooks/useUpdateProfile";
 
 import Container from "@/components/layout/Container";
 import Page from "@/components/layout/Page";
@@ -32,6 +32,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
+import { useAuth } from "@/auth";
 
 function EditProfileSkeleton() {
   return (
@@ -65,7 +66,7 @@ export default function EditProfile() {
     data: profile,
     isLoading,
     isError,
-  } = useProfile();
+  } = useAuth()
 
   const { mutate, isPending } = useUpdateProfile();
 
