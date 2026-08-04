@@ -1,62 +1,186 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* ========= Colors ========= */
+
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
+
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
+
     --sidebar: 210 40% 96%;
+
     --border: 214 32% 91%;
+
     --muted-foreground: 215 16% 47%;
+
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
+
     --secondary: 160 84% 39%;
     --secondary-foreground: 0 0% 100%;
+
     --accent: 38 92% 50%;
     --accent-foreground: 0 0% 100%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --radius: 0.5rem;
+
     --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
   }
 
   .dark {
     --background: 222 47% 4%;
     --foreground: 220 14% 96%;
+
     --card: 222 40% 9%;
     --card-foreground: 220 14% 96%;
+
     --sidebar: 222 47% 4%;
+
     --border: 217 33% 17%;
+
     --muted-foreground: 218 11% 65%;
+
     --primary: 217 91% 65%;
     --primary-foreground: 222 47% 11%;
+
     --secondary: 160 74% 45%;
     --secondary-foreground: 222 47% 11%;
+
     --accent: 38 92% 55%;
     --accent-foreground: 222 47% 11%;
+
     --destructive: 0 72% 55%;
     --destructive-foreground: 220 14% 96%;
+
     --ring: 217 91% 65%;
   }
 
-  * {
+  /* ========= Global Reset ========= */
+
+  *,
+  *::before,
+  *::after {
     @apply border-border;
+    box-sizing: border-box;
   }
+
+  html {
+    font-family: "Geist Variable", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
-  html {
-    @apply font-sans;
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer components {
+  /* ========= Page Layout ========= */
+
+  .page-container {
+    @apply mx-auto max-w-7xl px-6 lg:px-8;
+  }
+
+  .page-section {
+    @apply py-10;
+  }
+
+  .section-spacing {
+    @apply mt-10;
+  }
+
+  /* ========= Typography ========= */
+
+  .page-title {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  .page-subtitle {
+    @apply mt-2 text-lg text-muted-foreground;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  /* ========= Cards ========= */
+
+  .dashboard-card {
+    @apply rounded-xl border bg-card p-6 shadow-sm transition-all;
+  }
+
+  .dashboard-card:hover {
+    @apply shadow-md;
+  }
+
+  .stat-card {
+    @apply rounded-xl border bg-card p-6 shadow-sm;
+    min-height: 110px;
+  }
+
+  .action-card {
+    @apply flex items-center justify-between rounded-xl border bg-card p-5 transition-all duration-200;
+  }
+
+  .action-card:hover {
+    @apply bg-accent/5 shadow-md;
+    transform: translateY(-2px);
+  }
+
+  /* ========= Grid Helpers ========= */
+
+  .dashboard-grid {
+    @apply grid gap-6 md:grid-cols-2;
+  }
+
+  .dashboard-grid-3 {
+    @apply grid gap-6 lg:grid-cols-3;
+  }
+
+  /* ========= Content Spacing ========= */
+
+  .content-stack {
+    @apply space-y-8;
+  }
+
+  .content-stack-lg {
+    @apply space-y-10;
   }
 }

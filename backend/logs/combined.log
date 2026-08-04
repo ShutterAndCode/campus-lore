@@ -238,3 +238,17 @@
 {"level":"http","message":"GET /api/v1/profile/me 200 449 - 154.040 ms","timestamp":"2026-08-04 23:27:03"}
 {"level":"http","message":"GET /api/v1/profile/me 304 - - 127.913 ms","timestamp":"2026-08-04 23:27:03"}
 {"level":"http","message":"GET /api/v1/profile/me 304 - - 129.017 ms","timestamp":"2026-08-04 23:27:03"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Authentication required","timestamp":"2026-08-05 00:24:03"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 4.628 ms","timestamp":"2026-08-05 00:24:03"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.989 ms","timestamp":"2026-08-05 00:24:16"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Authentication required","timestamp":"2026-08-05 00:24:22"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 2.743 ms","timestamp":"2026-08-05 00:24:22"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Authentication required","timestamp":"2026-08-05 00:25:43"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 3.076 ms","timestamp":"2026-08-05 00:25:43"}
+{"level":"warn","message":"GET /api/v1/profile/me -> 401 Authentication required","timestamp":"2026-08-05 00:25:54"}
+{"level":"http","message":"GET /api/v1/profile/me 401 - - 7.929 ms","timestamp":"2026-08-05 00:25:54"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.628 ms","timestamp":"2026-08-05 00:25:55"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIDdCfyUhZxKv5UVB99NRkIEdgbA3Pwzlnqnv-2up8n3OVWvD_tExZulo99k9PI5Gw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none 302 64 - 31930.490 ms","timestamp":"2026-08-05 00:26:32"}
+{"level":"http","message":"GET /api/v1/profile/me 200 449 - 303.139 ms","timestamp":"2026-08-05 00:26:33"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 304.725 ms","timestamp":"2026-08-05 00:26:34"}
+{"level":"http","message":"GET /api/v1/profile/me 304 - - 115.041 ms","timestamp":"2026-08-05 00:26:34"}

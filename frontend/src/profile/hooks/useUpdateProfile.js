@@ -1,14 +1,14 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { updateCurrentUser } from "@/auth";
+import { updateMyProfile } from "../api/profile.api";
 
-export default function useUpdateProfile() {
+export function useUpdateProfile() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: updateCurrentUser,
+    mutationFn: updateMyProfile,
 
-    onSuccess: (updatedUser) => {
+    onSuccess(updatedUser) {
       queryClient.setQueryData(
         ["auth", "currentUser"],
         updatedUser

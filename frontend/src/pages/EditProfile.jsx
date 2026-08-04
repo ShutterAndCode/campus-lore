@@ -4,10 +4,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
-import { profileSchema } from "@/lib/profileSchema";
+import { profileSchema } from "@/profile/schemas/profileSchema";
 
-// import { useProfile } from "@/hooks/useProfile";
-import useUpdateProfile from "@/hooks/useUpdateProfile";
+import { useProfile } from "@/profile";
+import {useUpdateProfile} from "@/profile/hooks/useUpdateProfile";
 
 import Container from "@/components/layout/Container";
 import Page from "@/components/layout/Page";

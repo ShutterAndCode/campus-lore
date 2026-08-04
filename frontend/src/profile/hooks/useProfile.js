@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getCurrentUser } from "@/auth";
+import { getMyProfile } from "../api/profile.api";
 
-export default function useProfile() {
+export function useProfile() {
   return useQuery({
     queryKey: ["auth", "currentUser"],
-    queryFn: getCurrentUser,
+    queryFn: getMyProfile,
   });
 }
