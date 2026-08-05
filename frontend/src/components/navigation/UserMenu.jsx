@@ -3,11 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useAuth } from "@/auth";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import {
   DropdownMenu,
@@ -45,23 +41,27 @@ export default function UserMenu() {
     <DropdownMenu>
       <DropdownMenuTrigger
         className="
-          rounded-full
-          focus-visible:outline-none
-          focus-visible:ring-2
-          focus-visible:ring-ring
-        "
-        aria-label="Open user menu"
+    flex
+    items-center
+    gap-3
+    rounded-full
+    px-2
+    py-1
+    hover:bg-muted
+    transition-colors
+  "
       >
         <Avatar>
-          <AvatarImage
-            src={user?.avatarUrl || ""}
-            alt={user?.name || "User"}
-          />
+          <AvatarImage src={user?.avatarUrl} alt={user?.name} />
 
-          <AvatarFallback>
-            {initials}
-          </AvatarFallback>
+          <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
+
+        <div className="hidden xl:block text-left">
+          <p className="text-sm font-medium">{user?.name || "Student"}</p>
+
+          <p className="text-xs text-muted-foreground">{user?.email}</p>
+        </div>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-56">
@@ -70,9 +70,7 @@ export default function UserMenu() {
             {user?.name ?? "Student"}
           </p>
 
-          <p className="text-xs text-muted-foreground">
-            {user?.email ?? ""}
-          </p>
+          <p className="text-xs text-muted-foreground">{user?.email ?? ""}</p>
         </DropdownMenuLabel>
 
         <DropdownMenuSeparator />
@@ -90,9 +88,7 @@ export default function UserMenu() {
         <DropdownMenuSeparator />
 
         <div className="flex items-center justify-between px-2 py-1.5">
-          <span className="text-sm">
-            Theme
-          </span>
+          <span className="text-sm">Theme</span>
 
           <ThemeToggle />
         </div>

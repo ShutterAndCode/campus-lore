@@ -1,19 +1,30 @@
 import { NavLink } from "react-router-dom";
 
-export default function NavItem({ label, path,onClick, className = "" }) {
+import { cn } from "@/lib/utils";
+
+export default function NavItem({
+  label,
+  path,
+  icon: Icon,
+  className = "",
+  onClick,
+}) {
   return (
     <NavLink
       to={path}
       onClick={onClick}
       className={({ isActive }) =>
-        `text-sm font-medium transition-colors px-3 py-2 rounded-md ${
+        cn(
+          "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors",
           isActive
-            ? "text-primary bg-primary/10"
-            : "text-muted-foreground hover:text-foreground hover:bg-muted"
-        } ${className}`
+            ? "bg-primary text-primary-foreground"
+            : "text-muted-foreground hover:bg-muted hover:text-foreground",
+          className
+        )
       }
     >
-      {label}
+      {Icon && <Icon className="h-4 w-4" />}
+      <span>{label}</span>
     </NavLink>
   );
 }
