@@ -14,6 +14,9 @@ import ProtectedRoute from "./ProtectedRoute.jsx";
 import PublicRoute from "./PublicRoute.jsx";
 
 import { AuthProvider } from "@/auth";
+import { StoryDetailPage } from "@/story";
+import CreateStoryPage from "@/story/pages/CreateStoryPage";
+import EditStoryPage from "@/story/pages/EditStoryPage";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +40,10 @@ export const router = createBrowserRouter([
         path: "/auth/callback",
         element: <AuthCallback />,
       },
+      {
+        path: "/stories/:storyId",
+        element: <StoryDetailPage />,
+      },
 
       {
         path: "/unauthorized",
@@ -58,6 +65,14 @@ export const router = createBrowserRouter([
           {
             path: "/profile/edit",
             element: <EditProfile />,
+          },
+          {
+            path: "/stories/create",
+            element: <CreateStoryPage />,
+          },
+          {
+            path: "/stories/:storyId/edit",
+            element: <EditStoryPage />,
           },
         ],
       },
