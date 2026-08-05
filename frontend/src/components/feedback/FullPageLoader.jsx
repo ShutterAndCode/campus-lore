@@ -4,7 +4,7 @@ import Spinner from "@/components/feedback/Spinner";
 export default function FullPageLoader({
   size = 28,
   className = "min-h-[calc(100vh-4rem)]",
-  message,
+  label,
 }) {
   return (
     <Center
@@ -16,9 +16,9 @@ export default function FullPageLoader({
       <div className="flex flex-col items-center gap-3">
         <Spinner size={size} />
 
-        {message && (
+        {label && (
           <p className="text-sm text-muted-foreground">
-            {message}
+            {label}
           </p>
         )}
       </div>

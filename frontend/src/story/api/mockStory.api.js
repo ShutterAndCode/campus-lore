@@ -1,4 +1,4 @@
-import { STORY_FEED } from "@/home/constants/storyFeed";
+import { STORY_FEED } from "@/story/constants/storyFeed";
 
 
 let stories = [...STORY_FEED];

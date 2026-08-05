@@ -1,14 +1,30 @@
+import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
+
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { useSearchQuery } from "@/search";
+
 
 export default function SearchBar({ className }) {
+  const navigate = useNavigate();
+
+  const { query, setQuery } = useSearchQuery();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const value = query.trim();
+
+    if (!value) return;
+
+    navigate(`/search?q=${encodeURIComponent(value)}`);
+  }
+
   return (
-    <div
-      className={cn(
-        "relative hidden xl:block w-full",
-        className
-      )}
+    <form
+      onSubmit={handleSubmit}
+      className={cn("relative hidden xl:block w-full", className)}
     >
       <Search
         className="
@@ -25,6 +41,8 @@ export default function SearchBar({ className }) {
       <Input
         type="search"
         placeholder="Search stories, discussions, events..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
         className="
           h-10
           w-full
@@ -36,6 +54,6 @@ export default function SearchBar({ className }) {
           focus-visible:ring-2
         "
       />
-    </div>
+    </form>
   );
 }

@@ -14,10 +14,8 @@ import ProtectedRoute from "./ProtectedRoute.jsx";
 import PublicRoute from "./PublicRoute.jsx";
 
 import { AuthProvider } from "@/auth";
-import { StoryDetailPage } from "@/story";
-import CreateStoryPage from "@/story/pages/CreateStoryPage";
-import EditStoryPage from "@/story/pages/EditStoryPage";
-
+import { StoryDetailPage, CreateStoryPage, EditStoryPage } from "@/story";
+import { SearchPage } from "@/search";
 export const router = createBrowserRouter([
   {
     element: (
@@ -73,6 +71,10 @@ export const router = createBrowserRouter([
           {
             path: "/stories/:storyId/edit",
             element: <EditStoryPage />,
+          },
+          {
+            path: "/search",
+            element: <SearchPage />,
           },
         ],
       },

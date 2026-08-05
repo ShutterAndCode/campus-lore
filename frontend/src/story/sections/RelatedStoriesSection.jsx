@@ -1,23 +1,12 @@
 import RelatedStories from "../components/RelatedStories";
-import { useRelatedStories } from "../hooks/useRelatedStories";
-
+import { useRelatedStories } from "../hooks/queries/useRelatedStories";
+import { SectionLoader } from "@/components/feedback";
 export default function RelatedStoriesSection({ storyId }) {
-  const {
-    stories,
-    loading,
-  } = useRelatedStories(storyId);
-
+  const { stories, loading } = useRelatedStories(storyId);
 
   if (loading) {
-    return (
-      <p className="text-sm text-muted-foreground">
-        Loading related stories...
-      </p>
-    );
+    return <SectionLoader label="Loading related stories..." />;
   }
 
-
-  return (
-    <RelatedStories stories={stories} />
-  );
+  return <RelatedStories stories={stories} />;
 }

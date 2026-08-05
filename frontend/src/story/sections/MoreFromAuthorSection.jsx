@@ -1,5 +1,5 @@
 import RelatedStories from "../components/RelatedStories";
-import { useAuthorStories } from "../hooks/useAuthorStories";
+import { useAuthorStories } from "../hooks/queries/useAuthorStories";
 
 
 export default function MoreFromAuthorSection({

@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
 import { storySchema } from "../schemas/storySchema";
-import { useStory } from "../hooks/useStory";
+import { useStory } from "../hooks/queries/useStory";
 import { useUpdateStory } from "../hooks/useUpdateStory";
 
 import StoryForm from "../components/StoryForm";
@@ -53,17 +53,21 @@ export default function EditStoryPage() {
   }, [story, form]);
 
   function onSubmit(data) {
-    mutate(storyId, data, {
-      onSuccess: () => {
-        toast.success("Story updated successfully.");
-
-        navigate(`/stories/${storyId}`);
+    mutate(
+      {
+        storyId,
+        data,
       },
-
-      onError: () => {
-        toast.error("Failed to update story.");
-      },
-    });
+      {
+        onSuccess: () => {
+          toast.success("Story updated successfully.");
+          navigate(`/stories/${storyId}`);
+        },
+        onError: () => {
+          toast.error("Failed to update story.");
+        },
+      }
+    );
   }
 
   function onInvalid() {
@@ -71,8 +75,12 @@ export default function EditStoryPage() {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
-  }
+  return (
+    <FullPageLoader
+      label="Loading story..."
+    />
+  );
+}
 
   if (!story) {
     return <div>Story not found.</div>;

@@ -1,19 +1,19 @@
 import { useParams } from "react-router-dom";
 
-import { useStory } from "../hooks/useStory";
+import { useStory } from "../hooks/queries/useStory";
 import StoryDetailLayout from "../layouts/StoryDetailLayout";
-
+import { FullPageLoader } from "@/components/feedback";
 export default function StoryDetailPage() {
   const { storyId } = useParams();
 
   const { story, loading, error } = useStory(storyId);
 
   if (loading) {
-    return <div className="p-8">Loading story...</div>;
+    return <FullPageLoader label="Loading story..." />;
   }
 
   if (error) {
-    return <div className="p-8">Something went wrong.</div>;
+    return <ErrorState onRetry={refetch} />;
   }
 
   if (!story) {

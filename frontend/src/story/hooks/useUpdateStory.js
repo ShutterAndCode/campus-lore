@@ -1,44 +1,22 @@
-import { useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { updateStory } from "../services/story.service";
 
-
 export function useUpdateStory() {
+  const queryClient = useQueryClient();
 
-  const [isPending, setIsPending] = useState(false);
+  return useMutation({
+    mutationFn: ({ storyId, data }) =>
+      updateStory(storyId, data),
 
+    onSuccess: (_, variables) => {
+      queryClient.invalidateQueries({
+        queryKey: ["stories"],
+      });
 
-  async function mutate(id, data, callbacks = {}) {
-
-    try {
-
-      setIsPending(true);
-
-
-      const response =
-        await updateStory(id, data);
-
-
-      callbacks.onSuccess?.(response);
-
-
-    } catch(error) {
-
-
-      callbacks.onError?.(error);
-
-
-    } finally {
-
-      setIsPending(false);
-
-    }
-
-  }
-
-
-  return {
-    mutate,
-    isPending,
-  };
+      queryClient.invalidateQueries({
+        queryKey: ["story", variables.storyId],
+      });
+    },
+  });
 }

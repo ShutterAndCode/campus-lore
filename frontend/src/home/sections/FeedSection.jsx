@@ -2,7 +2,7 @@ import HeroSection from "../components/HeroSection";
 import FeaturedStory from "../components/FeaturedStory";
 import StoryCard from "../components/StoryCard";
 
-import useStories from "../../story/hooks/useStories";
+import useStories from "../../story/hooks/queries/useStories";
 
 export default function FeedSection() {
   const { stories, loading } = useStories();

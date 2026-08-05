@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 
-import { getStories } from "../services/story.service";
+import { searchStories } from "../services/search.service";
 
-export default function useStories() {
+export function useSearch(filters) {
   const [stories, setStories] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadStories() {
+      setLoading(true);
+
       try {
-        const data = await getStories();
+        const data = await searchStories(filters);
         setStories(data);
       } finally {
         setLoading(false);
@@ -17,7 +19,7 @@ export default function useStories() {
     }
 
     loadStories();
-  }, []);
+  }, [filters.query, filters.branch, filters.year, filters.sort]);
 
   return {
     stories,

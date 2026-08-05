@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import { STORY_FEED } from "../constants/storyFeed";
+import { STORY_FEED } from "../../story/constants/storyFeed";
 
 import TagList from "./TagList";
 import AuthorHeader from "./AuthorHeader";
