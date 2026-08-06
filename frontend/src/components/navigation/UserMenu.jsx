@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -52,7 +53,7 @@ export default function UserMenu() {
   "
       >
         <Avatar>
-          <AvatarImage src={user?.avatarUrl} alt={user?.name} />
+          <AvatarImage src={user?.avatar} alt={user?.name} />
 
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
@@ -65,33 +66,31 @@ export default function UserMenu() {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>
-          <p className="text-sm font-medium text-foreground">
-            {user?.name ?? "Student"}
-          </p>
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>
+            <p className="text-sm font-medium text-foreground">
+              {user?.name ?? "Student"}
+            </p>
 
-          <p className="text-xs text-muted-foreground">{user?.email ?? ""}</p>
-        </DropdownMenuLabel>
+            <p className="text-xs text-muted-foreground">{user?.email ?? ""}</p>
+          </DropdownMenuLabel>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuItem onClick={() => navigate("/profile")}>
+            <User className="mr-2 h-4 w-4" />
+            Profile
+          </DropdownMenuItem>
+
+          <DropdownMenuItem>
+            <Settings className="mr-2 h-4 w-4" />
+            Settings
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem onClick={() => navigate("/profile")}>
-          <User className="mr-2 h-4 w-4" />
-          Profile
-        </DropdownMenuItem>
-
-        <DropdownMenuItem>
-          <Settings className="mr-2 h-4 w-4" />
-          Settings
-        </DropdownMenuItem>
-
-        <DropdownMenuSeparator />
-
-        <div className="flex items-center justify-between px-2 py-1.5">
-          <span className="text-sm">Theme</span>
-
-          <ThemeToggle />
-        </div>
+        
 
         <DropdownMenuSeparator />
 

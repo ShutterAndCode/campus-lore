@@ -1,7 +1,7 @@
 export const API_ENDPOINTS = {
   AUTH: {
     GOOGLE_LOGIN: "/auth/google",
-    ME: "/profile/me",
+    ME: "/auth/me",
     REFRESH: "/auth/refresh",
     LOGOUT: "/auth/logout",
   },

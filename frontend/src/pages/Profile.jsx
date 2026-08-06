@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-
-
+import { useProfile } from "@/profile";
 import { getInitials } from "@/lib/user";
 
 import Page from "@/components/layout/Page";
@@ -11,14 +10,8 @@ import Grid from "@/components/layout/Grid";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useAuth } from "@/auth";
 
 const PROFILE_STATS = [
   { label: "Stories Written", value: 0 },
@@ -71,11 +64,7 @@ function ProfileError() {
 export default function Profile() {
   const navigate = useNavigate();
 
-  const {
-    data: profile,
-    isLoading,
-    isError,
-  } = useAuth();
+  const { data: profile, isLoading, isError } = useProfile();
 
   if (isLoading) {
     return <ProfileSkeleton />;
@@ -92,13 +81,8 @@ export default function Profile() {
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-4">
               <Avatar className="h-16 w-16">
-                <AvatarImage
-                  src={profile?.avatarUrl}
-                  alt={profile?.name ?? "Profile"}
-                />
-                <AvatarFallback>
-                  {getInitials(profile?.name)}
-                </AvatarFallback>
+                <AvatarImage src={profile?.avatar} alt={profile?.name ?? "Profile"} />
+                <AvatarFallback>{getInitials(profile?.name)}</AvatarFallback>
               </Avatar>
 
               <div>
@@ -112,10 +96,7 @@ export default function Profile() {
               </div>
             </div>
 
-            <Button
-              variant="outline"
-              onClick={() => navigate("/profile/edit")}
-            >
+            <Button variant="outline" onClick={() => navigate("/profile/edit")}>
               Edit Profile
             </Button>
           </div>
@@ -125,16 +106,22 @@ export default function Profile() {
               <CardTitle>About</CardTitle>
             </CardHeader>
 
-            <CardContent className="space-y-2">
+            <CardContent className="space-y-3">
               <p>{profile?.bio || "No bio added yet."}</p>
 
-              {(profile?.department || profile?.year) && (
-                <p className="text-sm text-muted-foreground">
-                  {[profile.department, profile.year]
-                    .filter(Boolean)
-                    .join(" • ")}
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <p>
+                  <strong>Role:</strong> {profile?.role}
                 </p>
-              )}
+
+                <p>
+                  <strong>Organization:</strong> {profile?.organization}
+                </p>
+
+                <p>
+                  <strong>Email:</strong> {profile?.email}
+                </p>
+              </div>
             </CardContent>
           </Card>
 

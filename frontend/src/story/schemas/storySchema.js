@@ -25,9 +25,14 @@ export const storySchema = z.object({
     .min(2, "Branch is required"),
 
 
-  year: z
-    .string()
-    .min(1, "Year is required"),
+  year: z.enum(
+  ["1st", "2nd", "3rd", "4th"],
+  {
+    errorMap: () => ({
+      message: "Please select an academic year",
+    }),
+  }
+),
 
 
   anonymous: z.boolean(),

@@ -5,7 +5,6 @@ export { useAuth } from "./hooks/useAuth";
 
 export {
   getCurrentUser,
-  updateCurrentUser,
   logout,
   loginWithGoogle,
 } from "./api/auth.api";

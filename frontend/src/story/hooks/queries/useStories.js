@@ -9,7 +9,8 @@ export default function useStories() {
   });
 
   return {
-    stories: query.data ?? [],
+    stories: query.data?.stories ?? [],
+    pagination: query.data?.pagination,
     loading: query.isLoading,
     error: query.error,
     isError: query.isError,

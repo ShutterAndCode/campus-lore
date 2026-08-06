@@ -4,7 +4,7 @@ import { getMyProfile } from "../api/profile.api";
 
 export function useProfile() {
   return useQuery({
-    queryKey: ["auth", "currentUser"],
+    queryKey: ["profile", "me"],
     queryFn: getMyProfile,
   });
 }

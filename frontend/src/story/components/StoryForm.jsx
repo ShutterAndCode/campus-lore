@@ -12,37 +12,22 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 
-
-export default function StoryForm({
-  form,
-  onSubmit,
-  onInvalid,
-  isSubmitting,
-}) {
+export default function StoryForm({ form, onSubmit, onInvalid, isSubmitting }) {
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(
-          onSubmit,
-          onInvalid
-        )}
+        onSubmit={form.handleSubmit(onSubmit, onInvalid)}
         className="space-y-6"
       >
-
         <FormField
           control={form.control}
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                Title
-              </FormLabel>
+              <FormLabel>Title</FormLabel>
 
               <FormControl>
-                <Input
-                  placeholder="Give your story a title"
-                  {...field}
-                />
+                <Input placeholder="Give your story a title" {...field} />
               </FormControl>
 
               <FormMessage />
@@ -50,16 +35,12 @@ export default function StoryForm({
           )}
         />
 
-
         <FormField
           control={form.control}
           name="content"
           render={({ field }) => (
             <FormItem>
-
-              <FormLabel>
-                Story
-              </FormLabel>
+              <FormLabel>Story</FormLabel>
 
               <FormControl>
                 <Textarea
@@ -70,21 +51,16 @@ export default function StoryForm({
               </FormControl>
 
               <FormMessage />
-
             </FormItem>
           )}
         />
-
 
         <FormField
           control={form.control}
           name="tags"
           render={({ field }) => (
             <FormItem>
-
-              <FormLabel>
-                Tags
-              </FormLabel>
+              <FormLabel>Tags</FormLabel>
 
               <FormControl>
                 <Input
@@ -102,76 +78,63 @@ export default function StoryForm({
               </FormControl>
 
               <FormMessage />
-
             </FormItem>
           )}
         />
-
 
         <FormField
           control={form.control}
           name="branch"
           render={({ field }) => (
             <FormItem>
-
-              <FormLabel>
-                Branch
-              </FormLabel>
+              <FormLabel>Branch</FormLabel>
 
               <FormControl>
-                <Input
-                  placeholder="Electrical Engineering"
-                  {...field}
-                />
+                <Input placeholder="Electrical Engineering" {...field} />
               </FormControl>
 
               <FormMessage />
-
             </FormItem>
           )}
         />
-
 
         <FormField
           control={form.control}
           name="year"
           render={({ field }) => (
             <FormItem>
-
-              <FormLabel>
-                Year
-              </FormLabel>
+              <FormLabel>Academic Year</FormLabel>
 
               <FormControl>
-                <Input
-                  placeholder="4th Year"
+                <select
                   {...field}
-                />
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                >
+                  <option value="">Select Year</option>
+                  <option value="1st">1st Year</option>
+                  <option value="2nd">2nd Year</option>
+                  <option value="3rd">3rd Year</option>
+                  <option value="4th">4th Year</option>
+                </select>
               </FormControl>
 
               <FormMessage />
-
             </FormItem>
           )}
         />
-
 
         <FormField
           control={form.control}
           name="anonymous"
           render={({ field }) => (
             <FormItem className="flex items-center justify-between rounded-lg border p-4">
-
               <div>
-                <FormLabel>
-                  Post anonymously
-                </FormLabel>
+                <FormLabel>Post anonymously</FormLabel>
 
                 <p className="text-sm text-muted-foreground">
                   Hide your identity from other students
                 </p>
               </div>
-
 
               <FormControl>
                 <Switch
@@ -179,21 +142,13 @@ export default function StoryForm({
                   onCheckedChange={field.onChange}
                 />
               </FormControl>
-
             </FormItem>
           )}
         />
 
-
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-        >
-          {isSubmitting
-            ? "Publishing..."
-            : "Publish Story"}
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Publishing..." : "Publish Story"}
         </Button>
-
       </form>
     </Form>
   );
