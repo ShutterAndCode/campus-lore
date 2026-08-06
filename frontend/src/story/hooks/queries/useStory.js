@@ -1,12 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-
 import { getStoryById } from "../../services/story.service";
 
 export function useStory(storyId) {
   const query = useQuery({
     queryKey: ["story", storyId],
     queryFn: () => getStoryById(storyId),
-    enabled: Boolean(storyId),
+    enabled: !!storyId,
   });
 
   return {

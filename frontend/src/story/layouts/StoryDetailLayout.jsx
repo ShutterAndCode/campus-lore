@@ -33,6 +33,7 @@ export default function StoryDetailLayout({ story }) {
 
         <StoryActions
           storyId={story.id}
+          storyAuthorId={story.author.id}
           helpful={story.helpful}
           bookmarked={story.bookmarked}
         />

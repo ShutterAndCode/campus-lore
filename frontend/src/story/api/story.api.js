@@ -9,25 +9,23 @@ export async function fetchStories(params = {}) {
 
   return response.data.data;
 }
+export async function fetchStoryById(postId) {
+  const response = await authApiClient.get(`/posts/${postId}`);
 
+  return response.data.data;
+}
 export async function createPost(postData) {
-  const response = await authApiClient.post(
-    "/posts",
-    postData
-  );
+  const response = await authApiClient.post("/posts", postData);
 
   return response.data.data;
 }
 
 /* ---------- Reactions ---------- */
 
-export async function createReaction(postId, reactionType) {
-  const response = await authApiClient.post(
-    `/posts/${postId}/reactions`,
-    {
-      reactionType,
-    }
-  );
+export async function createReaction(postId) {
+  const response = await authApiClient.post(`/posts/${postId}/reactions`, {
+    reactionType: "like",
+  });
 
   return response.data.data;
 }
@@ -35,20 +33,15 @@ export async function createReaction(postId, reactionType) {
 /* ---------- Comments ---------- */
 
 export async function getComments(postId) {
-  const response = await authApiClient.get(
-    `/posts/${postId}/comments`
-  );
+  const response = await authApiClient.get(`/posts/${postId}/comments`);
 
   return response.data.data;
 }
 
 export async function createComment(postId, content) {
-  const response = await authApiClient.post(
-    `/posts/${postId}/comments`,
-    {
-      content,
-    }
-  );
+  const response = await authApiClient.post(`/posts/${postId}/comments`, {
+    content,
+  });
 
   return response.data.data;
 }
@@ -63,21 +56,16 @@ export async function deleteComment(postId, commentId) {
 
 /* ---------- Future APIs ---------- */
 
-export async function deletePost(postId) {
-  const response = await authApiClient.delete(
-    `/posts/${postId}`
-  );
-
+export async function deleteStory(postId) {
+  const response = await authApiClient.delete(`/posts/${postId}`);
   return response.data.data;
 }
 
 export async function reportPost(postId, reason) {
-  const response = await authApiClient.post(
-    `/posts/${postId}/report`,
-    {
-      reason,
-    }
-  );
+  const response = await authApiClient.post(`/posts/${postId}/report`, {
+    reason,
+  });
 
   return response.data.data;
 }
+

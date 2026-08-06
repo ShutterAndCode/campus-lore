@@ -1,39 +1,34 @@
 import { useState } from "react";
+import { toast } from "sonner";
 
-import {
-  toggleBookmark,
-  shareStory,
-  reportStory,
-} from "../services/storyAction.service";
-
-
-export function useStoryActions({
-  storyId,
-  initialBookmarked,
+export default function useStoryActions({
+  initialBookmarked = false,
 }) {
+  const [bookmarked, setBookmarked] = useState(initialBookmarked);
 
-  const [bookmarked, setBookmarked] = useState(
-    initialBookmarked
-  );
+  function handleBookmark() {
+    setBookmarked((prev) => !prev);
 
-
-  async function handleBookmark() {
-    const updated =
-      await toggleBookmark(storyId);
-
-    setBookmarked(updated);
+    toast.success(
+      bookmarked ? "Bookmark removed." : "Story bookmarked."
+    );
   }
-
 
   async function handleShare() {
-    await shareStory(storyId);
+    try {
+      await navigator.share({
+        title: "CampusLore Story",
+        url: window.location.href,
+      });
+    } catch {
+      await navigator.clipboard.writeText(window.location.href);
+      toast.success("Link copied.");
+    }
   }
 
-
-  async function handleReport() {
-    await reportStory(storyId);
+  function handleReport() {
+    toast.info("Report feature coming soon.");
   }
-
 
   return {
     bookmarked,

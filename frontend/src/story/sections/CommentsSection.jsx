@@ -13,7 +13,7 @@ export default function CommentsSection({ storyId }) {
     <section className="space-y-6">
       <h2 className="text-xl font-semibold">Comments</h2>
 
-      <ReplyPlaceholder />
+      <ReplyPlaceholder storyId={storyId} />
 
       <CommentList comments={comments} />
     </section>

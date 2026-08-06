@@ -10,6 +10,7 @@ import {
 import {
   createPostController,
   getPostsController,
+  getPostByIdController,
   deletePostController,
 } from "../controllers/post.controller.js";
 
@@ -27,8 +28,8 @@ import {
   postIdParamsSchema,
   commentIdParamsSchema,
 } from "../validators/common.validator.js";
-import { createReportBodySchema } from '../validators/report.validator.js';
-import { createReportController } from '../controllers/report.controller.js';
+import { createReportBodySchema } from "../validators/report.validator.js";
+import { createReportController } from "../controllers/report.controller.js";
 
 const router = Router();
 
@@ -67,6 +68,11 @@ const router = Router();
  */
 
 router.get("/", validate(getPostsQuerySchema, "query"), getPostsController);
+router.get(
+  "/:postId",
+  validate(postIdParamsSchema, "params"),
+  getPostByIdController,
+);
 
 /**
  * @swagger
@@ -148,11 +154,11 @@ router.delete(
   deletePostController,
 );
 router.post(
-  '/:postId/report',
+  "/:postId/report",
   authenticate,
-  validate(postIdParamsSchema, 'params'),
-  validate(createReportBodySchema, 'body'),
-  createReportController
+  validate(postIdParamsSchema, "params"),
+  validate(createReportBodySchema, "body"),
+  createReportController,
 );
 
 export default router;

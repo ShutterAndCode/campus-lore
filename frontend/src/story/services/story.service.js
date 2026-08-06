@@ -1,7 +1,4 @@
-import {
-  fetchStories,
-  createPost,
-} from "../api/story.api";
+import { fetchStories, fetchStoryById, createPost, deleteStory} from "../api/story.api";
 
 function mapPostToStory(post) {
   return {
@@ -51,9 +48,9 @@ export async function createStory(formData) {
 /* Temporary placeholders until backend endpoints are added */
 
 export async function getStoryById(id) {
-  const { stories } = await getStories();
+  const post = await fetchStoryById(id);
 
-  return stories.find((story) => story.id === id) ?? null;
+  return mapPostToStory(post);
 }
 
 export async function updateStory() {
@@ -70,4 +67,7 @@ export async function getStoriesByAuthor(authorId) {
   const { stories } = await getStories();
 
   return stories.filter((story) => story.author?.id === authorId);
+}
+export async function removeStory(postId) {
+  return deleteStory(postId);
 }
