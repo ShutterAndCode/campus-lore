@@ -1,28 +1,18 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 import { searchStories } from "../services/search.service";
 
 export function useSearch(filters) {
-  const [stories, setStories] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const query = useQuery({
+    queryKey: ["search", filters],
 
-  useEffect(() => {
-    async function loadStories() {
-      setLoading(true);
-
-      try {
-        const data = await searchStories(filters);
-        setStories(data);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadStories();
-  }, [filters.query, filters.branch, filters.year, filters.sort]);
+    queryFn: () => searchStories(filters),
+  });
 
   return {
-    stories,
-    loading,
+    stories: query.data ?? [],
+    loading: query.isLoading,
+    error: query.error,
+    refetch: query.refetch,
   };
 }

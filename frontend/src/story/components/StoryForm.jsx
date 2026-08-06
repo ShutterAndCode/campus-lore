@@ -10,7 +10,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
 
 export default function StoryForm({ form, onSubmit, onInvalid, isSubmitting }) {
   return (
@@ -127,25 +126,37 @@ export default function StoryForm({ form, onSubmit, onInvalid, isSubmitting }) {
           control={form.control}
           name="anonymous"
           render={({ field }) => (
-            <FormItem className="flex items-center justify-between rounded-lg border p-4">
+            <FormItem className="space-y-3 rounded-xl border bg-muted/30 p-4">
               <div>
-                <FormLabel>Post anonymously</FormLabel>
+                <FormLabel>Posting Mode</FormLabel>
 
                 <p className="text-sm text-muted-foreground">
-                  Hide your identity from other students
+                  Choose whether your identity is visible to other students.
                 </p>
               </div>
 
-              <FormControl>
-                <Switch
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
+              <div className="flex gap-2">
+                <Button
+                  type="button"
+                  variant={!field.value ? "default" : "outline"}
+                  className="flex-1"
+                  onClick={() => field.onChange(false)}
+                >
+                  👤 Show Name
+                </Button>
+
+                <Button
+                  type="button"
+                  variant={field.value ? "default" : "outline"}
+                  className="flex-1"
+                  onClick={() => field.onChange(true)}
+                >
+                  🕶 Anonymous
+                </Button>
+              </div>
             </FormItem>
           )}
         />
-
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Publishing..." : "Publish Story"}
         </Button>

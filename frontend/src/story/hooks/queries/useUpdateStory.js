@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { updateStory } from "../services/story.service";
+import { updateStory } from "../../services/story.service";
 
 export function useUpdateStory() {
   const queryClient = useQueryClient();

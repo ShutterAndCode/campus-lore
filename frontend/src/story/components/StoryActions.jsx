@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 
 import useStoryActions from "../hooks/useStoryActions";
-import useToggleReaction from "../hooks/useToggleReaction";
+import useToggleReaction from "../hooks/queries/useToggleReaction";
 import useDeleteStory from "../hooks/mutations/useDeleteStory";
 
 import { useAuth } from "@/auth";
@@ -12,11 +14,17 @@ export default function StoryActions({
   helpful,
   bookmarked: initialBookmarked,
 }) {
-  const { bookmarked, handleBookmark, handleShare, handleReport } =
-    useStoryActions({
-      storyId,
-      initialBookmarked,
-    });
+  const navigate = useNavigate();
+
+  const {
+    bookmarked,
+    handleBookmark,
+    handleShare,
+    handleReport,
+  } = useStoryActions({
+    storyId,
+    initialBookmarked,
+  });
 
   const { user } = useAuth();
 
@@ -47,6 +55,10 @@ export default function StoryActions({
     if (!confirmed) return;
 
     deleteMutation.mutate(storyId);
+  }
+
+  function handleEdit() {
+    navigate(`/stories/${storyId}/edit`);
   }
 
   return (
@@ -81,15 +93,24 @@ export default function StoryActions({
       </Button>
 
       {isOwner && (
-        <Button
-          variant="destructive"
-          onClick={handleDelete}
-          disabled={deleteMutation.isPending}
-        >
-          {deleteMutation.isPending
-            ? "Deleting..."
-            : "🗑 Delete"}
-        </Button>
+        <>
+          <Button
+            variant="outline"
+            onClick={handleEdit}
+          >
+            ✏️ Edit
+          </Button>
+
+          <Button
+            variant="destructive"
+            onClick={handleDelete}
+            disabled={deleteMutation.isPending}
+          >
+            {deleteMutation.isPending
+              ? "Deleting..."
+              : "🗑 Delete"}
+          </Button>
+        </>
       )}
     </section>
   );

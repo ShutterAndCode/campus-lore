@@ -68,4 +68,12 @@ export async function reportPost(postId, reason) {
 
   return response.data.data;
 }
+export async function updatePost(postId, postData) {
+  const response = await authApiClient.patch(
+    `/posts/${postId}`,
+    postData
+  );
+
+  return response.data.data;
+}
 

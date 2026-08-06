@@ -1,7 +1,11 @@
 import Container from "@/components/layout/Container";
 import Page from "@/components/layout/Page";
 
-import { EmptyState, SectionLoader } from "@/components/feedback";
+import {
+  EmptyState,
+  SectionLoader,
+} from "@/components/feedback";
+
 import StoryCard from "@/home/components/StoryCard";
 import { Input } from "@/components/ui/input";
 
@@ -22,7 +26,11 @@ export default function SearchPage() {
 
   const debouncedQuery = useDebounce(query, 300);
 
-  const { stories, loading } = useSearch({
+  const {
+    stories,
+    loading,
+    error,
+  } = useSearch({
     query: debouncedQuery,
     branch,
     year,
@@ -53,8 +61,16 @@ export default function SearchPage() {
           <SectionLoader label="Searching..." />
         )}
 
+        {hasActiveSearch && error && (
+          <EmptyState
+            title="Search failed"
+            description="Please try again."
+          />
+        )}
+
         {hasActiveSearch &&
           !loading &&
+          !error &&
           stories.length > 0 && (
             <p className="text-sm text-muted-foreground">
               {stories.length} result
@@ -64,6 +80,7 @@ export default function SearchPage() {
 
         {hasActiveSearch &&
           !loading &&
+          !error &&
           stories.length === 0 && (
             <EmptyState
               title="No stories found"
@@ -72,6 +89,8 @@ export default function SearchPage() {
           )}
 
         {hasActiveSearch &&
+          !loading &&
+          !error &&
           stories.length > 0 && (
             <div className="space-y-8">
               {stories.map((story) => (

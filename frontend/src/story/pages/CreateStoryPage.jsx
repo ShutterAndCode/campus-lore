@@ -5,27 +5,16 @@ import { useNavigate } from "react-router-dom";
 
 import StoryForm from "../components/StoryForm";
 import { storySchema } from "../schemas/storySchema";
-import { useCreateStory } from "../hooks/useCreateStory";
+import { useCreateStory } from "../hooks/mutations/useCreateStory";
 
 import Container from "@/components/layout/Container";
 import Page from "@/components/layout/Page";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CreateStoryPage() {
-
   const navigate = useNavigate();
 
-  const {
-    mutate,
-    isPending,
-  } = useCreateStory();
-
+  const { mutate, isPending } = useCreateStory();
 
   const form = useForm({
     resolver: zodResolver(storySchema),
@@ -40,77 +29,44 @@ export default function CreateStoryPage() {
     },
   });
 
-
-
   function onSubmit(data) {
-
     mutate(data, {
-
       onSuccess: () => {
-
-        toast.success(
-          "Story published successfully."
-        );
+        toast.success("Story published successfully.");
 
         navigate("/");
-
       },
-
 
       onError: () => {
-
-        toast.error(
-          "Failed to publish story."
-        );
-
+        toast.error("Failed to publish story.");
       },
-
     });
-
   }
-
 
   function onInvalid(errors) {
+    const firstError = Object.values(errors)[0];
 
-    console.log("Validation errors:", errors);
-
-    toast.error(
-      "Please fix the errors before publishing."
-    );
-
+    toast.error(firstError?.message ?? "Please fix the form errors.");
   }
-
-
 
   return (
     <Page>
-
       <Container>
-
         <Card className="max-w-2xl">
-
           <CardHeader>
-            <CardTitle>
-              Create Story
-            </CardTitle>
+            <CardTitle>Create Story</CardTitle>
           </CardHeader>
 
-
           <CardContent>
-
             <StoryForm
               form={form}
               onSubmit={onSubmit}
               onInvalid={onInvalid}
               isSubmitting={isPending}
             />
-
           </CardContent>
-
         </Card>
-
       </Container>
-
     </Page>
   );
 }

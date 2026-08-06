@@ -5,10 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-
+import { FullPageLoader } from "@/components/feedback";
 import { storySchema } from "../schemas/storySchema";
 import { useStory } from "../hooks/queries/useStory";
-import { useUpdateStory } from "../hooks/useUpdateStory";
+import { useUpdateStory } from "../hooks/queries/useUpdateStory";
 
 import StoryForm from "../components/StoryForm";
 
@@ -39,15 +39,10 @@ export default function EditStoryPage() {
 
     form.reset({
       title: story.title ?? "",
-
       content: story.content ?? "",
-
       tags: story.tags ?? [],
-
-      branch: story.branch ?? "",
-
-      year: story.year ?? "",
-
+      branch: story.department ?? "",
+      year: story.academicYear ?? "",
       anonymous: story.anonymous ?? false,
     });
   }, [story, form]);
@@ -70,17 +65,15 @@ export default function EditStoryPage() {
     );
   }
 
-  function onInvalid() {
-    toast.error("Please fix the errors before updating.");
+  function onInvalid(errors) {
+    const firstError = Object.values(errors)[0];
+
+    toast.error(firstError?.message ?? "Please fix the form errors.");
   }
 
   if (loading) {
-  return (
-    <FullPageLoader
-      label="Loading story..."
-    />
-  );
-}
+    return <FullPageLoader label="Loading story..." />;
+  }
 
   if (!story) {
     return <div>Story not found.</div>;

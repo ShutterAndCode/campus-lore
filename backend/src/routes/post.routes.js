@@ -5,6 +5,7 @@ import { validate } from "../middlewares/validate.middleware.js";
 import {
   createPostSchema,
   getPostsQuerySchema,
+  updatePostSchema,
 } from "../validators/post.validator.js";
 
 import {
@@ -12,6 +13,7 @@ import {
   getPostsController,
   getPostByIdController,
   deletePostController,
+  updatePostController,
 } from "../controllers/post.controller.js";
 
 import { createReactionBodySchema } from "../validators/postReaction.validator.js";
@@ -139,6 +141,13 @@ router.get(
   "/:postId/comments",
   validate(postIdParamsSchema, "params"),
   getPostCommentsController,
+);
+router.patch(
+  "/:postId",
+  authenticate,
+  validate(postIdParamsSchema, "params"),
+  validate(updatePostSchema),
+  updatePostController,
 );
 router.delete(
   "/:postId/comments/:commentId",

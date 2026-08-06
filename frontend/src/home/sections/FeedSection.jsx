@@ -1,5 +1,5 @@
 import HeroSection from "../components/HeroSection";
-import FeaturedStory from "../components/FeaturedStory";
+
 import StoryCard from "../components/StoryCard";
 
 import useStories from "../../story/hooks/queries/useStories";
@@ -11,7 +11,7 @@ export default function FeedSection() {
     <div className="space-y-8">
       <HeroSection />
 
-      <FeaturedStory />
+      
 
       <section className="rounded-3xl border bg-card p-6">
         <div className="mb-8 flex items-center justify-between">

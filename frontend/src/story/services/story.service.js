@@ -1,5 +1,11 @@
-import { fetchStories, fetchStoryById, createPost, deleteStory} from "../api/story.api";
-
+import {
+  fetchStories,
+  fetchStoryById,
+  createPost,
+  updatePost,
+  deleteStory,
+} from "../api/story.api";
+import { formatRelativeTime } from "@/shared/utils/formatRelativeTime";
 function mapPostToStory(post) {
   return {
     id: post._id,
@@ -8,7 +14,7 @@ function mapPostToStory(post) {
     academicYear: post.academicYear,
     department: post.department,
     tags: post.tags,
-    createdAt: post.createdAt,
+    createdAt: formatRelativeTime(post.createdAt),
     anonymous: post.isAnonymous,
     helpful: post.likesCount,
     comments: post.commentsCount,
@@ -53,8 +59,19 @@ export async function getStoryById(id) {
   return mapPostToStory(post);
 }
 
-export async function updateStory() {
-  throw new Error("Update story is not implemented yet.");
+export async function updateStory(storyId, formData) {
+  const payload = {
+    title: formData.title,
+    content: formData.content,
+    academicYear: formData.year,
+    department: formData.branch,
+    tags: formData.tags,
+    isAnonymous: formData.anonymous,
+  };
+
+  const post = await updatePost(storyId, payload);
+
+  return mapPostToStory(post);
 }
 
 export async function getRelatedStories(storyId) {

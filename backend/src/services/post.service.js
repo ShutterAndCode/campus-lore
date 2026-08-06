@@ -30,11 +30,21 @@ export const getPosts = async ({
   academicYear,
   department,
   tag,
+  search,
 }) => {
   const filter = {};
   if (academicYear) filter.academicYear = academicYear;
   if (department) filter.department = department;
   if (tag) filter.tags = tag.trim().toLowerCase();
+  if (search?.trim()) {
+  const regex = new RegExp(search.trim(), "i");
+
+  filter.$or = [
+    { title: regex },
+    { content: regex },
+    { tags: regex },
+  ];
+}
 
   const skip = (page - 1) * limit;
 
@@ -84,4 +94,46 @@ export const deletePost = async (postId, userId) => {
   await post.deleteOne();
 
   return { deleted: true };
+};
+export const updatePost = async (postId, userId, updates) => {
+  const post = await ExperiencePost.findById(postId);
+
+  if (!post) {
+    throw new ApiError(404, "Post not found");
+  }
+
+  if (post.author.toString() !== userId.toString()) {
+    throw new ApiError(
+      403,
+      "You are not authorized to edit this post"
+    );
+  }
+
+  if (updates.title !== undefined) {
+    post.title = updates.title.trim();
+  }
+
+  if (updates.content !== undefined) {
+    post.content = updates.content.trim();
+  }
+
+  if (updates.academicYear !== undefined) {
+    post.academicYear = updates.academicYear;
+  }
+
+  if (updates.department !== undefined) {
+    post.department = updates.department.trim();
+  }
+
+  if (updates.tags !== undefined) {
+    post.tags = normalizeTags(updates.tags);
+  }
+
+  if (updates.isAnonymous !== undefined) {
+    post.isAnonymous = updates.isAnonymous;
+  }
+
+  await post.save();
+
+  return post.populate("author", PUBLIC_PROFILE_FIELDS);
 };

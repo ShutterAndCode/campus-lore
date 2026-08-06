@@ -1,81 +1,51 @@
-import { STORY_FEED } from "@/story/constants/storyFeed";
+import { fetchStories } from "@/story/api/story.api";
+import { formatRelativeTime } from "@/shared/utils/formatRelativeTime";
+function mapPostToStory(post) {
+  return {
+    id: post._id,
+    title: post.title,
+    content: post.content,
+    academicYear: post.academicYear,
+    department: post.department,
+    tags: post.tags,
+    createdAt: formatRelativeTime(post.createdAt),
+    anonymous: post.isAnonymous,
+    helpful: post.likesCount,
+    comments: post.commentsCount,
+    bookmarked: false,
 
-export async function searchStories({
-  query = "",
-  branch = "All",
-  year = "All",
-  sort = "newest",
-}) {
-  let stories = [...STORY_FEED];
+    author: {
+      id: post.author?._id,
+      name: post.isAnonymous ? "Anonymous" : post.author?.name,
+      avatar: post.isAnonymous ? "" : post.author?.avatar,
+    },
+  };
+}
 
-  // Search
-  const search = query.trim().toLowerCase();
+export async function searchStories({ query, branch, year }) {
+  const params = {};
 
-  if (search) {
-    stories = stories.filter((story) => {
-      const titleMatch = story.title
-        .toLowerCase()
-        .includes(search);
-
-      const excerptMatch = story.excerpt
-        .toLowerCase()
-        .includes(search);
-
-      const contentMatch = story.content
-        ?.toLowerCase()
-        .includes(search);
-
-      const tagMatch = story.tags.some((tag) =>
-        tag.toLowerCase().includes(search)
-      );
-
-      const branchMatch = story.branch
-        .toLowerCase()
-        .includes(search);
-
-      return (
-        titleMatch ||
-        excerptMatch ||
-        contentMatch ||
-        tagMatch ||
-        branchMatch
-      );
-    });
+  if (query.trim()) {
+    params.search = query.trim();
   }
 
-  // Branch Filter
   if (branch !== "All") {
-    stories = stories.filter(
-      (story) => story.branch === branch
-    );
+    params.department = branch;
   }
 
-  // Year Filter
   if (year !== "All") {
-    stories = stories.filter(
-      (story) => story.year === year
-    );
+    params.academicYear = year;
   }
 
-  // Sorting
-  switch (sort) {
-    case "helpful":
-      stories.sort(
-        (a, b) => b.helpful - a.helpful
-      );
-      break;
-
-    case "views":
-      stories.sort(
-        (a, b) => b.views - a.views
-      );
-      break;
-
-    case "newest":
-    default:
-      // STORY_FEED is already newest-first.
-      break;
+  if (branch !== "All") {
+    params.department = branch;
   }
 
-  return Promise.resolve(stories);
+  if (year !== "All") {
+    params.academicYear = year;
+  }
+
+  const data = await fetchStories(params);
+
+  return data.posts.map(mapPostToStory);
 }

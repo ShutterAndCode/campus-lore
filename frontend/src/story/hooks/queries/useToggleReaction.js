@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-import { createReaction } from "../api/story.api";
+import { createReaction } from "../../api/story.api";
 
 export default function useToggleReaction() {
   const queryClient = useQueryClient();

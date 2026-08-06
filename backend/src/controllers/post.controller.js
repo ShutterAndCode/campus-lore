@@ -5,6 +5,7 @@ import {
   getPosts,
   getPostById,
   deletePost,
+  updatePost,
 } from "../services/post.service.js";
 
 export const createPostController = asyncHandler(async (req, res) => {
@@ -30,4 +31,11 @@ export const deletePostController = asyncHandler(async (req, res) => {
   res
     .status(200)
     .json(new ApiResponse(200, result, "Post deleted successfully"));
+});
+export const updatePostController = asyncHandler(async (req, res) => {
+  const { postId } = req.params;
+
+  const post = await updatePost(postId, req.user._id, req.body);
+
+  res.status(200).json(new ApiResponse(200, post, "Post updated successfully"));
 });
