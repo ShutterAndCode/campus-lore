@@ -1,4 +1,4 @@
-import AuthorSection from "../components/AuthorSection";
+
 import StoryMetadata from "../components/StoryMetadata";
 import StoryContent from "../components/StoryContent";
 import StoryTags from "../components/StoryTags";
@@ -6,15 +6,17 @@ import StoryActions from "../components/StoryActions";
 import CommentsSection from "../sections/CommentsSection";
 import RelatedStoriesSection from "../sections/RelatedStoriesSection";
 import MoreFromAuthorSection from "../sections/MoreFromAuthorSection";
-
+import AuthorHeader from "@/home/components/AuthorHeader";
 export default function StoryDetailLayout({ story }) {
   return (
     <main className="mx-auto max-w-4xl px-4 py-8 space-y-8">
       <section className="space-y-4">
-        <AuthorSection
+        <AuthorHeader
           author={story.author}
+          anonymous={story.anonymous}
           year={story.year}
           branch={story.branch}
+          createdAt={story.createdAt}
         />
 
         <StoryMetadata

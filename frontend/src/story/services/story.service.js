@@ -5,7 +5,7 @@ import {
   updatePost,
   deleteStory,
 } from "../api/story.api";
-import { formatRelativeTime } from "@/shared/utils/formatRelativeTime";
+
 function mapPostToStory(post) {
   return {
     id: post._id,
@@ -14,7 +14,7 @@ function mapPostToStory(post) {
     academicYear: post.academicYear,
     department: post.department,
     tags: post.tags,
-    createdAt: formatRelativeTime(post.createdAt),
+    createdAt: post.createdAt,
     anonymous: post.isAnonymous,
     helpful: post.likesCount,
     comments: post.commentsCount,

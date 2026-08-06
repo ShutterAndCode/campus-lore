@@ -27,6 +27,7 @@ export default function StoryCard({ story }) {
         <div className="flex items-start justify-between">
           <AuthorHeader
             author={story.author}
+            anonymous={story.anonymous}
             year={story.year}
             branch={story.branch}
             createdAt={story.createdAt}

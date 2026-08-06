@@ -14,3 +14,8 @@ export async function updateMyProfile(data) {
 
   return response.data.data;
 }
+export async function getPublicProfile(userId) {
+  const response = await apiClient.get(`/profile/${userId}`);
+
+  return response.data.data;
+}

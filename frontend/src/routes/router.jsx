@@ -12,7 +12,7 @@ import AuthCallback from "../pages/AuthCallback.jsx";
 
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import PublicRoute from "./PublicRoute.jsx";
-
+import { ProfilePage } from "@/profile";
 import { AuthProvider } from "@/auth";
 import { StoryDetailPage, CreateStoryPage, EditStoryPage } from "@/story";
 import { SearchPage } from "@/search";
@@ -75,6 +75,10 @@ export const router = createBrowserRouter([
           {
             path: "/search",
             element: <SearchPage />,
+          },
+          {
+            path: "/users/:userId",
+            element: <ProfilePage />,
           },
         ],
       },
