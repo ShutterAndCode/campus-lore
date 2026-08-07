@@ -1,6 +1,11 @@
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiResponse from "../utils/ApiResponse.js";
-import { createReport } from "../services/report.service.js";
+import {
+  createReport,
+  getReports,
+  updateReportStatus,
+  resolveReport,
+} from "../services/report.service.js";
 
 export const createReportController = asyncHandler(async (req, res) => {
   const { postId } = req.params;

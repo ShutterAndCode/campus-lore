@@ -1048,3 +1048,457 @@
 {"level":"http","message":"GET /api/v1/auth/me 304 - - 43.501 ms","timestamp":"2026-08-07 00:34:39"}
 {"level":"http","message":"GET /api/v1/auth/me 304 - - 40.600 ms","timestamp":"2026-08-07 00:34:48"}
 {"level":"http","message":"GET /api/v1/profile/6a6ce8fc2e4313d9d78a3d56 304 - - 82.099 ms","timestamp":"2026-08-07 00:34:49"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 6.092 ms","timestamp":"2026-08-07 14:49:35"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxICbAM2hqYbSPFT48z4VKHt8j1_2Ja5QHcKD8LXe5HHLd2o00Lc3S2S9X8x_w-Mf-Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none 302 64 - 1139.497 ms","timestamp":"2026-08-07 14:49:42"}
+{"level":"http","message":"GET /api/v1/auth/me 200 464 - 70.335 ms","timestamp":"2026-08-07 14:49:43"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 67.414 ms","timestamp":"2026-08-07 14:49:44"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 64.903 ms","timestamp":"2026-08-07 14:49:44"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 107.356 ms","timestamp":"2026-08-07 14:49:45"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192 200 665 - 92.743 ms","timestamp":"2026-08-07 14:49:56"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192/comments 200 85 - 86.370 ms","timestamp":"2026-08-07 14:49:56"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 131.661 ms","timestamp":"2026-08-07 14:49:56"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 106.729 ms","timestamp":"2026-08-07 14:49:56"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 128.897 ms","timestamp":"2026-08-07 14:49:57"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 105.300 ms","timestamp":"2026-08-07 14:51:48"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192/comments 304 - - 92.157 ms","timestamp":"2026-08-07 14:51:52"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 133.419 ms","timestamp":"2026-08-07 14:51:52"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192 304 - - 146.494 ms","timestamp":"2026-08-07 14:51:52"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 87.779 ms","timestamp":"2026-08-07 14:51:52"}
+{"level":"http","message":"GET /api/v1/auth/me 200 464 - 64.203 ms","timestamp":"2026-08-07 14:54:21"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192 200 665 - 90.605 ms","timestamp":"2026-08-07 14:54:21"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192/comments 304 - - 83.877 ms","timestamp":"2026-08-07 14:54:22"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 176.647 ms","timestamp":"2026-08-07 14:54:22"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 103.987 ms","timestamp":"2026-08-07 14:54:22"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192 304 - - 85.720 ms","timestamp":"2026-08-07 14:56:30"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 69.168 ms","timestamp":"2026-08-07 14:56:30"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 138.815 ms","timestamp":"2026-08-07 14:56:30"}
+{"level":"http","message":"GET /api/v1/posts/6a74bebbca30f2582711b192/comments 304 - - 150.710 ms","timestamp":"2026-08-07 14:56:30"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 135.492 ms","timestamp":"2026-08-07 14:56:30"}
+{"level":"http","message":"GET /api/v1/posts/6a74beafca30f2582711b18f 200 665 - 130.409 ms","timestamp":"2026-08-07 15:04:16"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 128.011 ms","timestamp":"2026-08-07 15:04:16"}
+{"level":"http","message":"GET /api/v1/posts/6a74beafca30f2582711b18f/comments 304 - - 81.278 ms","timestamp":"2026-08-07 15:04:16"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 132.917 ms","timestamp":"2026-08-07 15:04:16"}
+{"level":"http","message":"DELETE /api/v1/posts/6a74beafca30f2582711b18f 200 95 - 352.372 ms","timestamp":"2026-08-07 15:04:21"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 84.036 ms","timestamp":"2026-08-07 15:04:21"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 148.385 ms","timestamp":"2026-08-07 15:04:33"}
+{"level":"warn","message":"POST /api/v1/posts -> 401 Authentication required","timestamp":"2026-08-07 15:05:59"}
+{"level":"http","message":"POST /api/v1/posts 401 - - 1.406 ms","timestamp":"2026-08-07 15:05:59"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 15:06:14"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 3.886 ms","timestamp":"2026-08-07 15:06:14"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 1.987 ms","timestamp":"2026-08-07 15:06:15"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIAjZpedq3owKJexvwM7YAQ6XEuSlDtphcqByVRhqGnnwhfnOf7ykWElZN7s1mFdJg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none 302 64 - 1311.088 ms","timestamp":"2026-08-07 15:06:24"}
+{"level":"http","message":"GET /api/v1/auth/me 200 464 - 369.861 ms","timestamp":"2026-08-07 15:06:30"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 75.823 ms","timestamp":"2026-08-07 15:06:30"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.797 ms","timestamp":"2026-08-07 15:06:31"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 128.360 ms","timestamp":"2026-08-07 15:06:31"}
+{"level":"http","message":"POST /api/v1/posts 201 - - 133.572 ms","timestamp":"2026-08-07 15:06:56"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 210.077 ms","timestamp":"2026-08-07 15:06:57"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 200 - - 141.295 ms","timestamp":"2026-08-07 15:06:59"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 82.441 ms","timestamp":"2026-08-07 15:07:00"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 200 85 - 137.700 ms","timestamp":"2026-08-07 15:07:00"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 123.633 ms","timestamp":"2026-08-07 15:07:00"}
+{"level":"http","message":"POST /api/v1/posts/6a75a738c63e9e4d54c8d377/reactions 200 121 - 314.620 ms","timestamp":"2026-08-07 15:07:53"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 200 - - 121.437 ms","timestamp":"2026-08-07 15:07:53"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 16:38:23"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 15.933 ms","timestamp":"2026-08-07 16:38:24"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 281.432 ms","timestamp":"2026-08-07 16:38:24"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 136.067 ms","timestamp":"2026-08-07 16:38:24"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 144.425 ms","timestamp":"2026-08-07 16:38:24"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 146.468 ms","timestamp":"2026-08-07 16:38:24"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 81 - 168.702 ms","timestamp":"2026-08-07 16:38:32"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 16:38:32"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 13.886 ms","timestamp":"2026-08-07 16:38:32"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 2.502 ms","timestamp":"2026-08-07 16:38:33"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIAWHe4C_hG9es05VxbsYwIBJXmyYVYAySRM0emMyQSJEhnRW6e-H-K5OjA8wjftsQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 302 64 - 843.802 ms","timestamp":"2026-08-07 16:38:41"}
+{"level":"http","message":"GET /api/v1/auth/me 200 464 - 69.173 ms","timestamp":"2026-08-07 16:38:43"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 76.340 ms","timestamp":"2026-08-07 16:38:44"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 71.631 ms","timestamp":"2026-08-07 16:38:44"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 72.087 ms","timestamp":"2026-08-07 16:38:44"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.765 ms","timestamp":"2026-08-07 16:38:44"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 149.746 ms","timestamp":"2026-08-07 16:38:44"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 68.571 ms","timestamp":"2026-08-07 16:39:06"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 69.259 ms","timestamp":"2026-08-07 16:46:42"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 136.684 ms","timestamp":"2026-08-07 16:46:44"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 81 - 180.620 ms","timestamp":"2026-08-07 16:47:23"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 16:47:24"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 14.415 ms","timestamp":"2026-08-07 16:47:24"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 8.597 ms","timestamp":"2026-08-07 16:47:27"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIA0NXL7FRUgVtprrPU7bus_U7E8ivnEXXBLa6S0EuAHFV5inopHZ3oPm8frYuV9-A&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none 302 64 - 680.016 ms","timestamp":"2026-08-07 16:47:35"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 74.274 ms","timestamp":"2026-08-07 16:47:37"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 63.092 ms","timestamp":"2026-08-07 16:47:37"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 69.656 ms","timestamp":"2026-08-07 16:47:37"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 68.361 ms","timestamp":"2026-08-07 16:47:38"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 85.122 ms","timestamp":"2026-08-07 16:47:38"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 72.754 ms","timestamp":"2026-08-07 16:47:38"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 69.419 ms","timestamp":"2026-08-07 16:47:38"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 194.718 ms","timestamp":"2026-08-07 16:47:38"}
+{"level":"http","message":"GET /api/v1/profile/me 200 465 - 124.037 ms","timestamp":"2026-08-07 16:47:45"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 64.651 ms","timestamp":"2026-08-07 16:47:58"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 156 - 134.160 ms","timestamp":"2026-08-07 16:47:59"}
+{"level":"http","message":"GET /api/v1/admin/users 200 648 - 132.347 ms","timestamp":"2026-08-07 16:48:05"}
+{"level":"http","message":"GET /api/v1/admin/posts 200 - - 209.361 ms","timestamp":"2026-08-07 16:48:07"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.802 ms","timestamp":"2026-08-07 16:48:12"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 125.324 ms","timestamp":"2026-08-07 16:48:12"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 68.646 ms","timestamp":"2026-08-07 16:49:51"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 503.296 ms","timestamp":"2026-08-07 16:49:52"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 144.198 ms","timestamp":"2026-08-07 16:49:58"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 445.359 ms","timestamp":"2026-08-07 16:49:59"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 134.100 ms","timestamp":"2026-08-07 16:50:01"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 141.383 ms","timestamp":"2026-08-07 16:50:06"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 216.233 ms","timestamp":"2026-08-07 16:50:07"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 126.157 ms","timestamp":"2026-08-07 16:50:08"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 513.920 ms","timestamp":"2026-08-07 16:50:10"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 204.870 ms","timestamp":"2026-08-07 16:51:07"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 126.559 ms","timestamp":"2026-08-07 16:51:09"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 562.506 ms","timestamp":"2026-08-07 16:51:11"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 77.964 ms","timestamp":"2026-08-07 16:52:05"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 205.409 ms","timestamp":"2026-08-07 16:52:05"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 123.598 ms","timestamp":"2026-08-07 16:52:07"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 243.022 ms","timestamp":"2026-08-07 16:52:09"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 189.782 ms","timestamp":"2026-08-07 16:52:55"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 193.442 ms","timestamp":"2026-08-07 16:53:03"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 192.604 ms","timestamp":"2026-08-07 16:53:14"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 282.163 ms","timestamp":"2026-08-07 16:53:15"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 193.542 ms","timestamp":"2026-08-07 16:53:28"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 253.744 ms","timestamp":"2026-08-07 16:53:30"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 188.303 ms","timestamp":"2026-08-07 16:53:32"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 65.730 ms","timestamp":"2026-08-07 16:53:35"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 495.642 ms","timestamp":"2026-08-07 16:53:36"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 204.836 ms","timestamp":"2026-08-07 16:54:33"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 123.785 ms","timestamp":"2026-08-07 16:54:37"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 250.262 ms","timestamp":"2026-08-07 16:54:38"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 197.577 ms","timestamp":"2026-08-07 16:55:12"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 64.451 ms","timestamp":"2026-08-07 16:55:16"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 189.702 ms","timestamp":"2026-08-07 16:55:17"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 202.488 ms","timestamp":"2026-08-07 16:55:25"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 122.639 ms","timestamp":"2026-08-07 16:55:26"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 142.877 ms","timestamp":"2026-08-07 16:55:27"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 123.035 ms","timestamp":"2026-08-07 16:55:28"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 145.538 ms","timestamp":"2026-08-07 17:01:26"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 142.758 ms","timestamp":"2026-08-07 17:01:28"}
+{"level":"http","message":"GET /api/v1/admin/users - - - - ms","timestamp":"2026-08-07 17:01:40"}
+{"level":"http","message":"GET /api/v1/admin/users 200 648 - 1928.857 ms","timestamp":"2026-08-07 17:01:51"}
+{"level":"warn","message":"GET /admin/users -> 404 Route not found - /admin/users","timestamp":"2026-08-07 17:04:44"}
+{"level":"http","message":"GET /admin/users 404 - - 5.146 ms","timestamp":"2026-08-07 17:04:44"}
+{"level":"warn","message":"GET /favicon.ico -> 404 Route not found - /favicon.ico","timestamp":"2026-08-07 17:04:44"}
+{"level":"http","message":"GET /favicon.ico 404 - - 0.850 ms","timestamp":"2026-08-07 17:04:44"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.938 ms","timestamp":"2026-08-07 17:04:56"}
+{"level":"warn","message":"GET /api/v1/admin/users -> 401 Authentication required","timestamp":"2026-08-07 17:05:08"}
+{"level":"http","message":"GET /api/v1/admin/users 401 - - 3.803 ms","timestamp":"2026-08-07 17:05:08"}
+{"level":"warn","message":"GET /api/v1/admin/users -> 403 Insufficient permissions","timestamp":"2026-08-07 17:07:08"}
+{"level":"http","message":"GET /api/v1/admin/users 403 985 - 67.403 ms","timestamp":"2026-08-07 17:07:08"}
+{"level":"http","message":"GET /api/v1/admin/users 200 648 - 129.984 ms","timestamp":"2026-08-07 17:08:28"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 17:15:23"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 5.224 ms","timestamp":"2026-08-07 17:15:23"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 3.752 ms","timestamp":"2026-08-07 17:15:51"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxICpdLbYzGMldZycsgbdx3M2yY_f0zSlxoFAkygZE2vFepYc4WGn8vXUqEzRHKQG3Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 302 64 - 1238.729 ms","timestamp":"2026-08-07 17:16:05"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 61.147 ms","timestamp":"2026-08-07 17:16:18"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 65.237 ms","timestamp":"2026-08-07 17:16:19"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.106 ms","timestamp":"2026-08-07 17:16:19"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 344.672 ms","timestamp":"2026-08-07 17:16:20"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 935.262 ms","timestamp":"2026-08-07 17:16:36"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 129.620 ms","timestamp":"2026-08-07 17:16:37"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 122.329 ms","timestamp":"2026-08-07 17:16:40"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 185.809 ms","timestamp":"2026-08-07 17:16:44"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 124.755 ms","timestamp":"2026-08-07 17:16:46"}
+{"level":"info","message":{"action":"UPDATE_ROLE","admin":{"email":"viviousvenom25@gmail.com","id":"6a6ce8fc2e4313d9d78a3d56","name":"Vishii"},"metadata":{"newRole":"admin"},"target":{"email":"2023uee2016@mnit.ac.in","id":"6a6c613e215cff6a89a78a80","name":"VINEET SINGH PARIHAR"},"timestamp":"2026-08-07T11:46:49.053Z","type":"ADMIN_AUDIT"},"timestamp":"2026-08-07 17:16:49"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6c613e215cff6a89a78a80/role 200 373 - 255.068 ms","timestamp":"2026-08-07 17:16:49"}
+{"level":"http","message":"GET /api/v1/admin/users 200 646 - 127.163 ms","timestamp":"2026-08-07 17:16:49"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 8.541 ms","timestamp":"2026-08-07 17:23:30"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIADvRzBHEEcKiq7R9yzSNzP8eBhWDjJCTXtju13ZCracWrnJaLnv5djCUxzexayLA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&hd=mnit.ac.in&prompt=none 302 64 - 1347.346 ms","timestamp":"2026-08-07 17:23:39"}
+{"level":"http","message":"GET /api/v1/auth/me 200 466 - 78.597 ms","timestamp":"2026-08-07 17:23:42"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 74.384 ms","timestamp":"2026-08-07 17:23:42"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 73.702 ms","timestamp":"2026-08-07 17:23:42"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 160.868 ms","timestamp":"2026-08-07 17:23:42"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 67.353 ms","timestamp":"2026-08-07 17:23:51"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 156 - 134.599 ms","timestamp":"2026-08-07 17:23:51"}
+{"level":"http","message":"GET /api/v1/admin/users 200 646 - 139.401 ms","timestamp":"2026-08-07 17:23:53"}
+{"level":"warn","message":"PATCH /api/v1/admin/users/6a6c613e215cff6a89a78a80/role -> 400 You cannot change your own role.","timestamp":"2026-08-07 17:23:56"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6c613e215cff6a89a78a80/role 400 - - 67.129 ms","timestamp":"2026-08-07 17:23:56"}
+{"level":"warn","message":"PATCH /api/v1/admin/users/6a6c613e215cff6a89a78a80/role -> 400 You cannot change your own role.","timestamp":"2026-08-07 17:23:59"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6c613e215cff6a89a78a80/role 400 - - 64.868 ms","timestamp":"2026-08-07 17:23:59"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 6.495 ms","timestamp":"2026-08-07 17:28:42"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIC1qU6rRlxAL63eX5L8QhgzSLsZg1yFOPjcUL-zPiKKTGLTv74qWnjaqnt-2fuibg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none 302 64 - 771.592 ms","timestamp":"2026-08-07 17:28:51"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 71.477 ms","timestamp":"2026-08-07 17:29:00"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.355 ms","timestamp":"2026-08-07 17:29:02"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 79.441 ms","timestamp":"2026-08-07 17:29:02"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 132.480 ms","timestamp":"2026-08-07 17:29:02"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 41.883 ms","timestamp":"2026-08-07 17:29:14"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 119.803 ms","timestamp":"2026-08-07 17:29:14"}
+{"level":"http","message":"GET /api/v1/admin/users 304 - - 132.973 ms","timestamp":"2026-08-07 17:29:16"}
+{"level":"warn","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role -> 400 You cannot change your own role.","timestamp":"2026-08-07 17:29:19"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role 400 - - 68.071 ms","timestamp":"2026-08-07 17:29:19"}
+{"level":"warn","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role -> 400 You cannot change your own role.","timestamp":"2026-08-07 17:30:30"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role 400 - - 70.787 ms","timestamp":"2026-08-07 17:30:30"}
+{"level":"warn","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role -> 400 You cannot change your own role.","timestamp":"2026-08-07 17:31:14"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role 400 - - 68.511 ms","timestamp":"2026-08-07 17:31:14"}
+{"level":"warn","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role -> 400 You cannot change your own role.","timestamp":"2026-08-07 17:31:42"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6ce8fc2e4313d9d78a3d56/role 400 - - 67.786 ms","timestamp":"2026-08-07 17:31:42"}
+{"level":"info","message":{"action":"UPDATE_ROLE","admin":{"email":"viviousvenom25@gmail.com","id":"6a6ce8fc2e4313d9d78a3d56","name":"Vishii"},"metadata":{"newRole":"student"},"target":{"email":"2023uee2016@mnit.ac.in","id":"6a6c613e215cff6a89a78a80","name":"VINEET SINGH PARIHAR"},"timestamp":"2026-08-07T12:01:50.275Z","type":"ADMIN_AUDIT"},"timestamp":"2026-08-07 17:31:50"}
+{"level":"http","message":"PATCH /api/v1/admin/users/6a6c613e215cff6a89a78a80/role 200 375 - 350.294 ms","timestamp":"2026-08-07 17:31:50"}
+{"level":"http","message":"GET /api/v1/admin/users 200 648 - 132.091 ms","timestamp":"2026-08-07 17:31:50"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 17:46:18"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 16.777 ms","timestamp":"2026-08-07 17:46:18"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 2.799 ms","timestamp":"2026-08-07 17:46:20"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIATIea-WS5lJ6gGrw99imt9iYLn3L4LkqajHENNf4iw7R7TLmqNBg1_t4je-B1ymQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 302 64 - 643.919 ms","timestamp":"2026-08-07 17:46:27"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 47.312 ms","timestamp":"2026-08-07 17:46:31"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 50.332 ms","timestamp":"2026-08-07 17:46:31"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 43.447 ms","timestamp":"2026-08-07 17:46:31"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 50.778 ms","timestamp":"2026-08-07 17:46:31"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 47.707 ms","timestamp":"2026-08-07 17:46:31"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 46.142 ms","timestamp":"2026-08-07 17:46:32"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 57.015 ms","timestamp":"2026-08-07 17:46:32"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 222.378 ms","timestamp":"2026-08-07 17:46:32"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.253 ms","timestamp":"2026-08-07 17:46:40"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 153.113 ms","timestamp":"2026-08-07 17:46:40"}
+{"level":"http","message":"GET /api/v1/admin/posts 200 - - 184.049 ms","timestamp":"2026-08-07 17:48:57"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 149.728 ms","timestamp":"2026-08-07 17:49:56"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 176.641 ms","timestamp":"2026-08-07 17:50:05"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 146.841 ms","timestamp":"2026-08-07 17:52:38"}
+{"level":"info","message":{"action":"DELETE_POST","admin":{"email":"viviousvenom25@gmail.com","id":"6a6ce8fc2e4313d9d78a3d56","name":"Vishii"},"metadata":{},"target":{"author":"Vishii","id":"6a74bea4ca30f2582711b18c","title":"gfgfgfgfgfgf"},"timestamp":"2026-08-07T12:23:02.242Z","type":"ADMIN_AUDIT"},"timestamp":"2026-08-07 17:53:02"}
+{"level":"http","message":"DELETE /api/v1/admin/posts/6a74bea4ca30f2582711b18c 200 83 - 260.632 ms","timestamp":"2026-08-07 17:53:02"}
+{"level":"http","message":"GET /api/v1/admin/posts 200 - - 168.965 ms","timestamp":"2026-08-07 17:53:02"}
+{"level":"warn","message":"GET /api/v1/admin/posts -> 401 Authentication required","timestamp":"2026-08-07 18:13:34"}
+{"level":"http","message":"GET /api/v1/admin/posts 401 - - 1.340 ms","timestamp":"2026-08-07 18:13:34"}
+{"level":"warn","message":"GET /api/v1/admin/posts -> 401 Authentication required","timestamp":"2026-08-07 18:13:37"}
+{"level":"http","message":"GET /api/v1/admin/posts 401 - - 0.938 ms","timestamp":"2026-08-07 18:13:37"}
+{"level":"warn","message":"GET /api/v1/admin/posts -> 401 Authentication required","timestamp":"2026-08-07 18:13:39"}
+{"level":"http","message":"GET /api/v1/admin/posts 401 - - 0.926 ms","timestamp":"2026-08-07 18:13:39"}
+{"level":"warn","message":"GET /api/v1/admin/posts -> 401 Authentication required","timestamp":"2026-08-07 18:14:31"}
+{"level":"http","message":"GET /api/v1/admin/posts 401 - - 0.984 ms","timestamp":"2026-08-07 18:14:31"}
+{"level":"warn","message":"GET /api/v1/admin/posts -> 401 Authentication required","timestamp":"2026-08-07 18:14:32"}
+{"level":"http","message":"GET /api/v1/admin/posts 401 - - 1.256 ms","timestamp":"2026-08-07 18:14:32"}
+{"level":"warn","message":"GET /api/v1/admin/posts -> 401 Authentication required","timestamp":"2026-08-07 18:14:33"}
+{"level":"http","message":"GET /api/v1/admin/posts 401 - - 1.165 ms","timestamp":"2026-08-07 18:14:33"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 81 - 405.893 ms","timestamp":"2026-08-07 18:24:51"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 18:24:52"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 4.930 ms","timestamp":"2026-08-07 18:24:52"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.756 ms","timestamp":"2026-08-07 18:24:55"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIDOFFxCOzcu8N1wRGnz7uaT47YxcUxw_bYDkWS0ms4ZGdbKVLBR-gWvrEdbt6P2qw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 302 64 - 1975.299 ms","timestamp":"2026-08-07 18:25:06"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 67.318 ms","timestamp":"2026-08-07 18:25:10"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 67.875 ms","timestamp":"2026-08-07 18:25:11"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 128.816 ms","timestamp":"2026-08-07 18:25:11"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 64.615 ms","timestamp":"2026-08-07 18:25:11"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 18:26:46"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 1.713 ms","timestamp":"2026-08-07 18:26:46"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 1.919 ms","timestamp":"2026-08-07 18:26:53"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxID-i7LwvQifuOKsFOoDJK1bWsZiUIU62F_OJLhOpVbUq3TXtcSHj5zUX2zhTYyPiQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&hd=mnit.ac.in&prompt=none 302 64 - 773.661 ms","timestamp":"2026-08-07 18:27:00"}
+{"level":"http","message":"GET /api/v1/auth/me 200 468 - 66.531 ms","timestamp":"2026-08-07 18:27:01"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 66.040 ms","timestamp":"2026-08-07 18:27:02"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 66.759 ms","timestamp":"2026-08-07 18:27:02"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 133.662 ms","timestamp":"2026-08-07 18:27:02"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 200 - - 128.674 ms","timestamp":"2026-08-07 18:27:14"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 80.435 ms","timestamp":"2026-08-07 18:27:14"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 200 85 - 123.047 ms","timestamp":"2026-08-07 18:27:14"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 129.412 ms","timestamp":"2026-08-07 18:27:14"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 82.961 ms","timestamp":"2026-08-07 18:31:09"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 6.180 ms","timestamp":"2026-08-07 18:51:21"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIA1EmtmkuJqh8ubTRBFNg5ixZL3OM_jdgMfi27TaTCMSC5y9Ux41GMsjatbGVNphQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 302 64 - 808.522 ms","timestamp":"2026-08-07 18:51:34"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 75.417 ms","timestamp":"2026-08-07 18:51:40"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 85.736 ms","timestamp":"2026-08-07 18:51:41"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 66.067 ms","timestamp":"2026-08-07 18:51:41"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 147.484 ms","timestamp":"2026-08-07 18:51:41"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:51:45"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 8.476 ms","timestamp":"2026-08-07 18:51:45"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 69.494 ms","timestamp":"2026-08-07 18:51:49"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 140.703 ms","timestamp":"2026-08-07 18:51:49"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:51:58"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 2.208 ms","timestamp":"2026-08-07 18:51:58"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:53:32"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 3.721 ms","timestamp":"2026-08-07 18:53:32"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 73.550 ms","timestamp":"2026-08-07 18:53:32"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:54:30"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 1.660 ms","timestamp":"2026-08-07 18:54:30"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 69.182 ms","timestamp":"2026-08-07 18:54:30"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 83.528 ms","timestamp":"2026-08-07 18:56:06"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 73.536 ms","timestamp":"2026-08-07 18:57:16"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 67.533 ms","timestamp":"2026-08-07 18:57:49"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:57:54"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 1.519 ms","timestamp":"2026-08-07 18:57:54"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 142.787 ms","timestamp":"2026-08-07 18:57:56"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 141.503 ms","timestamp":"2026-08-07 18:57:59"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 159.414 ms","timestamp":"2026-08-07 18:58:56"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:59:00"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 1.251 ms","timestamp":"2026-08-07 18:59:00"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:59:02"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 1.264 ms","timestamp":"2026-08-07 18:59:02"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 81 - 159.127 ms","timestamp":"2026-08-07 18:59:06"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 18:59:07"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 2.041 ms","timestamp":"2026-08-07 18:59:07"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.894 ms","timestamp":"2026-08-07 18:59:08"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIAln3u7EScEDHcJDvSZ5FIqjs5wOhqfpymmP9nRRi6aPfOZ1Ds0b78EyITPxV97Kg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none 302 64 - 665.769 ms","timestamp":"2026-08-07 18:59:15"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 67.558 ms","timestamp":"2026-08-07 18:59:17"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 81.313 ms","timestamp":"2026-08-07 18:59:17"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 63.513 ms","timestamp":"2026-08-07 18:59:18"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 154.203 ms","timestamp":"2026-08-07 18:59:18"}
+{"level":"warn","message":"GET /api/v1/posts/undefined -> 400 postId: Invalid postId format","timestamp":"2026-08-07 18:59:21"}
+{"level":"http","message":"GET /api/v1/posts/undefined 400 - - 1.551 ms","timestamp":"2026-08-07 18:59:21"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 132.580 ms","timestamp":"2026-08-07 19:00:51"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 83.253 ms","timestamp":"2026-08-07 19:00:51"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 134.016 ms","timestamp":"2026-08-07 19:00:51"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 141.490 ms","timestamp":"2026-08-07 19:00:51"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 135.029 ms","timestamp":"2026-08-07 19:00:53"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 129.389 ms","timestamp":"2026-08-07 19:00:55"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 66.712 ms","timestamp":"2026-08-07 19:01:09"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 43.535 ms","timestamp":"2026-08-07 19:01:26"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 120.378 ms","timestamp":"2026-08-07 19:01:26"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 131.743 ms","timestamp":"2026-08-07 19:01:27"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 142.758 ms","timestamp":"2026-08-07 19:01:27"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 141.264 ms","timestamp":"2026-08-07 19:01:27"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 131.784 ms","timestamp":"2026-08-07 19:01:33"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 96.940 ms","timestamp":"2026-08-07 19:03:25"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 130.145 ms","timestamp":"2026-08-07 19:03:25"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 132.490 ms","timestamp":"2026-08-07 19:03:25"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 130.588 ms","timestamp":"2026-08-07 19:03:25"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:25:15"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 8.287 ms","timestamp":"2026-08-07 19:25:15"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 - - - - ms","timestamp":"2026-08-07 19:25:25"}
+{"level":"error","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 -> 500 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n","stack":"MongoServerSelectionError: 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n\n    at Topology.selectServer (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:327:38)\n    at async tryOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:148:18)\n    at async executeOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:78:16)\n    at async FindCursor._initialize (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/find_cursor.js:62:26)\n    at async FindCursor.cursorInit (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:632:27)\n    at async FindCursor.fetchBatch (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:666:13)\n    at async FindCursor.next (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:342:17)\n    at async Collection.findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:313:24)\n    at async model.Query._findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:2710:15)\n    at async model.Query.exec (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:4627:63)","timestamp":"2026-08-07 19:25:45"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:26:09"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 6.385 ms","timestamp":"2026-08-07 19:26:09"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 - - - - ms","timestamp":"2026-08-07 19:26:19"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:26:37"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 1.532 ms","timestamp":"2026-08-07 19:26:37"}
+{"level":"error","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 -> 500 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n","stack":"MongoServerSelectionError: 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n\n    at Topology.selectServer (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:327:38)\n    at async tryOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:148:18)\n    at async executeOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:78:16)\n    at async FindCursor._initialize (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/find_cursor.js:62:26)\n    at async FindCursor.cursorInit (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:632:27)\n    at async FindCursor.fetchBatch (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:666:13)\n    at async FindCursor.next (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:342:17)\n    at async Collection.findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:313:24)\n    at async model.Query._findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:2710:15)\n    at async model.Query.exec (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:4627:63)","timestamp":"2026-08-07 19:26:39"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 - - - - ms","timestamp":"2026-08-07 19:26:47"}
+{"level":"http","message":"POST /api/v1/auth/logout - - - - ms","timestamp":"2026-08-07 19:26:49"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:26:49"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 1.283 ms","timestamp":"2026-08-07 19:26:49"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:26:50"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 1.181 ms","timestamp":"2026-08-07 19:26:50"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.869 ms","timestamp":"2026-08-07 19:26:51"}
+{"level":"error","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 -> 500 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n","stack":"MongoServerSelectionError: 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n\n    at Topology.selectServer (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:327:38)\n    at async tryOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:148:18)\n    at async executeOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:78:16)\n    at async FindCursor._initialize (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/find_cursor.js:62:26)\n    at async FindCursor.cursorInit (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:632:27)\n    at async FindCursor.fetchBatch (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:666:13)\n    at async FindCursor.next (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:342:17)\n    at async Collection.findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:313:24)\n    at async model.Query._findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:2710:15)\n    at async model.Query.exec (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:4627:63)","timestamp":"2026-08-07 19:27:07"}
+{"level":"error","message":"POST /api/v1/auth/logout -> 500 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n","stack":"MongoServerSelectionError: 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n\n    at Topology.selectServer (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:327:38)\n    at async tryOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:148:18)\n    at async executeOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:78:16)\n    at async FindCursor._initialize (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/find_cursor.js:62:26)\n    at async FindCursor.cursorInit (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:632:27)\n    at async FindCursor.fetchBatch (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:666:13)\n    at async FindCursor.next (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:342:17)\n    at async Collection.findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:313:24)\n    at async model.Query._findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:2710:15)\n    at async model.Query.exec (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:4627:63)","timestamp":"2026-08-07 19:27:09"}
+{"level":"error","message":"POST /api/v1/auth/logout -> 500 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n","stack":"MongoServerSelectionError: 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n\n    at Topology.selectServer (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:327:38)\n    at async tryOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:148:18)\n    at async executeOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:78:16)\n    at async FindCursor._initialize (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/find_cursor.js:62:26)\n    at async FindCursor.cursorInit (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:632:27)\n    at async FindCursor.fetchBatch (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:666:13)\n    at async FindCursor.next (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:342:17)\n    at async Collection.findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:313:24)\n    at async model.Query._findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:2710:15)\n    at async model.Query.exec (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:4627:63)","timestamp":"2026-08-07 19:27:16"}
+{"level":"http","message":"POST /api/v1/auth/logout 500 - - 30007.082 ms","timestamp":"2026-08-07 19:27:16"}
+{"level":"error","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxID6y-YUU-Q9cw_SeJ_lfyAUqB6HD0DshJtH-ct5D3Kp4dg258NO_I5lOJszceNNjw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none -> 500 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n","stack":"MongoServerSelectionError: 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n\n    at Topology.selectServer (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:327:38)\n    at async tryOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:148:18)\n    at async executeOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:78:16)\n    at async FindCursor._initialize (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/find_cursor.js:62:26)\n    at async FindCursor.cursorInit (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:632:27)\n    at async FindCursor.fetchBatch (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:666:13)\n    at async FindCursor.next (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:342:17)\n    at async Collection.findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:313:24)\n    at async model.Query._findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:2710:15)\n    at async model.Query.exec (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:4627:63)","timestamp":"2026-08-07 19:27:29"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxID6y-YUU-Q9cw_SeJ_lfyAUqB6HD0DshJtH-ct5D3Kp4dg258NO_I5lOJszceNNjw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 500 - - 31066.026 ms","timestamp":"2026-08-07 19:27:29"}
+{"level":"warn","message":"GET /.well-known/appspecific/com.chrome.devtools.json -> 404 Route not found - /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-08-07 19:27:30"}
+{"level":"http","message":"GET /.well-known/appspecific/com.chrome.devtools.json 404 - - 0.926 ms","timestamp":"2026-08-07 19:27:30"}
+{"level":"error","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxID6y-YUU-Q9cw_SeJ_lfyAUqB6HD0DshJtH-ct5D3Kp4dg258NO_I5lOJszceNNjw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none -> 500 Bad Request","stack":"TokenError: Bad Request\n    at OAuth2Strategy.parseErrorResponse (/home/musclequant/repos/campus-lore/backend/node_modules/passport-oauth2/lib/strategy.js:373:12)\n    at OAuth2Strategy._createOAuthError (/home/musclequant/repos/campus-lore/backend/node_modules/passport-oauth2/lib/strategy.js:420:16)\n    at /home/musclequant/repos/campus-lore/backend/node_modules/passport-oauth2/lib/strategy.js:177:45\n    at /home/musclequant/repos/campus-lore/backend/node_modules/oauth/lib/oauth2.js:196:18\n    at passBackControl (/home/musclequant/repos/campus-lore/backend/node_modules/oauth/lib/oauth2.js:132:9)\n    at IncomingMessage.<anonymous> (/home/musclequant/repos/campus-lore/backend/node_modules/oauth/lib/oauth2.js:157:7)\n    at IncomingMessage.emit (node:events:521:24)\n    at endReadableNT (node:internal/streams/readable:1729:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","timestamp":"2026-08-07 19:27:38"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxID6y-YUU-Q9cw_SeJ_lfyAUqB6HD0DshJtH-ct5D3Kp4dg258NO_I5lOJszceNNjw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 500 1006 - 233.532 ms","timestamp":"2026-08-07 19:27:38"}
+{"level":"warn","message":"GET /.well-known/appspecific/com.chrome.devtools.json -> 404 Route not found - /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-08-07 19:27:39"}
+{"level":"http","message":"GET /.well-known/appspecific/com.chrome.devtools.json 404 - - 0.878 ms","timestamp":"2026-08-07 19:27:39"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:27:42"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 4.360 ms","timestamp":"2026-08-07 19:27:42"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.754 ms","timestamp":"2026-08-07 19:27:43"}
+{"level":"error","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIC9340sEHqKLC3KKIS6I_K7xlgkcsCRLXU-XyvG9CLNyw4jYIeb2wUi1QPxoDNMtg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none -> 500 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n","stack":"MongoServerSelectionError: 40DE15E0FD700000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 80\n\n    at Topology.selectServer (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:327:38)\n    at async tryOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:148:18)\n    at async executeOperation (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:78:16)\n    at async FindCursor._initialize (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/find_cursor.js:62:26)\n    at async FindCursor.cursorInit (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:632:27)\n    at async FindCursor.fetchBatch (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:666:13)\n    at async FindCursor.next (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/cursor/abstract_cursor.js:342:17)\n    at async Collection.findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:313:24)\n    at async model.Query._findOne (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:2710:15)\n    at async model.Query.exec (/home/musclequant/repos/campus-lore/backend/node_modules/mongoose/lib/query.js:4627:63)","timestamp":"2026-08-07 19:28:20"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIC9340sEHqKLC3KKIS6I_K7xlgkcsCRLXU-XyvG9CLNyw4jYIeb2wUi1QPxoDNMtg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none 500 - - 30469.213 ms","timestamp":"2026-08-07 19:28:20"}
+{"level":"warn","message":"GET /.well-known/appspecific/com.chrome.devtools.json -> 404 Route not found - /.well-known/appspecific/com.chrome.devtools.json","timestamp":"2026-08-07 19:28:20"}
+{"level":"http","message":"GET /.well-known/appspecific/com.chrome.devtools.json 404 - - 0.785 ms","timestamp":"2026-08-07 19:28:20"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:36:44"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 14.386 ms","timestamp":"2026-08-07 19:36:44"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 2.085 ms","timestamp":"2026-08-07 19:36:50"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxICoWm3DEIbqFr2MhMqP3-M2qkR_wsb9F_YCIYlPSEuJUXqe7plx3OWI671DGjt55w&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 302 64 - 699.450 ms","timestamp":"2026-08-07 19:36:55"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 74.845 ms","timestamp":"2026-08-07 19:36:57"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 67.782 ms","timestamp":"2026-08-07 19:36:57"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 66.868 ms","timestamp":"2026-08-07 19:36:57"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 160.131 ms","timestamp":"2026-08-07 19:36:57"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 200 - - 128.991 ms","timestamp":"2026-08-07 19:37:00"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 129.876 ms","timestamp":"2026-08-07 19:37:00"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 127.180 ms","timestamp":"2026-08-07 19:37:00"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 125.960 ms","timestamp":"2026-08-07 19:37:00"}
+{"level":"warn","message":"POST /api/v1/reports/6a75a738c63e9e4d54c8d377 -> 404 Route not found - /api/v1/reports/6a75a738c63e9e4d54c8d377","timestamp":"2026-08-07 19:37:18"}
+{"level":"http","message":"POST /api/v1/reports/6a75a738c63e9e4d54c8d377 404 - - 1.247 ms","timestamp":"2026-08-07 19:37:18"}
+{"level":"warn","message":"POST /api/v1/reports/6a75a738c63e9e4d54c8d377 -> 404 Route not found - /api/v1/reports/6a75a738c63e9e4d54c8d377","timestamp":"2026-08-07 19:37:33"}
+{"level":"http","message":"POST /api/v1/reports/6a75a738c63e9e4d54c8d377 404 - - 2.306 ms","timestamp":"2026-08-07 19:37:33"}
+{"level":"warn","message":"POST /api/v1/reports/6a75a738c63e9e4d54c8d377 -> 400 You cannot report your own post","timestamp":"2026-08-07 19:43:49"}
+{"level":"http","message":"POST /api/v1/reports/6a75a738c63e9e4d54c8d377 400 441 - 168.346 ms","timestamp":"2026-08-07 19:43:49"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 166.353 ms","timestamp":"2026-08-07 19:44:10"}
+{"level":"http","message":"GET /api/v1/posts/6a6e486b9a6ca3b0d290cf47 304 - - 122.881 ms","timestamp":"2026-08-07 19:44:14"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 138.272 ms","timestamp":"2026-08-07 19:44:15"}
+{"level":"http","message":"GET /api/v1/posts/6a6e486b9a6ca3b0d290cf47/comments 200 529 - 127.142 ms","timestamp":"2026-08-07 19:44:15"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 131.781 ms","timestamp":"2026-08-07 19:44:15"}
+{"level":"http","message":"POST /api/v1/reports/6a6e486b9a6ca3b0d290cf47 201 426 - 271.082 ms","timestamp":"2026-08-07 19:44:32"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.057 ms","timestamp":"2026-08-07 19:44:41"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 70.440 ms","timestamp":"2026-08-07 19:44:53"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 156 - 150.872 ms","timestamp":"2026-08-07 19:44:53"}
+{"level":"error","message":"GET /api/v1/reports -> 500 getReports is not defined","stack":"ReferenceError: getReports is not defined\n    at file:///home/musclequant/repos/campus-lore/backend/src/controllers/report.controller.js:16:18\n    at file:///home/musclequant/repos/campus-lore/backend/src/utils/asyncHandler.js:10:28\n    at Layer.handle [as handle_request] (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/route.js:149:13)\n    at file:///home/musclequant/repos/campus-lore/backend/src/middlewares/validate.middleware.js:17:5\n    at file:///home/musclequant/repos/campus-lore/backend/src/utils/asyncHandler.js:10:28\n    at Layer.handle [as handle_request] (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/route.js:149:13)\n    at file:///home/musclequant/repos/campus-lore/backend/src/middlewares/role.middleware.js:13:12\n    at Layer.handle [as handle_request] (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/layer.js:95:5)","timestamp":"2026-08-07 19:44:55"}
+{"level":"http","message":"GET /api/v1/reports 500 - - 63.671 ms","timestamp":"2026-08-07 19:44:55"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 252.402 ms","timestamp":"2026-08-07 19:45:50"}
+{"level":"error","message":"GET /api/v1/reports -> 500 PUBLIC_PROFILE_FIELDS is not defined","stack":"ReferenceError: PUBLIC_PROFILE_FIELDS is not defined\n    at getReports (file:///home/musclequant/repos/campus-lore/backend/src/services/report.service.js:38:29)\n    at file:///home/musclequant/repos/campus-lore/backend/src/controllers/report.controller.js:21:24\n    at file:///home/musclequant/repos/campus-lore/backend/src/utils/asyncHandler.js:10:28\n    at Layer.handle [as handle_request] (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/route.js:149:13)\n    at file:///home/musclequant/repos/campus-lore/backend/src/middlewares/validate.middleware.js:17:5\n    at file:///home/musclequant/repos/campus-lore/backend/src/utils/asyncHandler.js:10:28\n    at Layer.handle [as handle_request] (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/route.js:149:13)\n    at file:///home/musclequant/repos/campus-lore/backend/src/middlewares/role.middleware.js:13:12","timestamp":"2026-08-07 19:45:50"}
+{"level":"http","message":"GET /api/v1/reports 500 - - 82.943 ms","timestamp":"2026-08-07 19:45:50"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 720.224 ms","timestamp":"2026-08-07 19:46:34"}
+{"level":"error","message":"GET /api/v1/reports -> 500 PUBLIC_PROFILE_FIELDS is not defined","stack":"ReferenceError: PUBLIC_PROFILE_FIELDS is not defined\n    at getReports (file:///home/musclequant/repos/campus-lore/backend/src/services/report.service.js:38:29)\n    at file:///home/musclequant/repos/campus-lore/backend/src/controllers/report.controller.js:22:24\n    at file:///home/musclequant/repos/campus-lore/backend/src/utils/asyncHandler.js:10:28\n    at Layer.handle [as handle_request] (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/route.js:149:13)\n    at file:///home/musclequant/repos/campus-lore/backend/src/middlewares/validate.middleware.js:17:5\n    at file:///home/musclequant/repos/campus-lore/backend/src/utils/asyncHandler.js:10:28\n    at Layer.handle [as handle_request] (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/musclequant/repos/campus-lore/backend/node_modules/express/lib/router/route.js:149:13)\n    at file:///home/musclequant/repos/campus-lore/backend/src/middlewares/role.middleware.js:13:12","timestamp":"2026-08-07 19:46:34"}
+{"level":"http","message":"GET /api/v1/reports 500 - - 70.190 ms","timestamp":"2026-08-07 19:46:34"}
+{"level":"http","message":"GET /api/v1/admin/posts 304 - - 234.659 ms","timestamp":"2026-08-07 19:48:00"}
+{"level":"http","message":"GET /api/v1/reports 200 771 - 209.295 ms","timestamp":"2026-08-07 19:48:01"}
+{"level":"http","message":"PATCH /api/v1/reports/6a75e848339218bb5703fc14 200 479 - 202.632 ms","timestamp":"2026-08-07 19:48:12"}
+{"level":"http","message":"GET /api/v1/reports 200 156 - 125.344 ms","timestamp":"2026-08-07 19:48:13"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 93.011 ms","timestamp":"2026-08-07 19:56:04"}
+{"level":"http","message":"GET /api/v1/posts/6a6e486b9a6ca3b0d290cf47 304 - - 85.130 ms","timestamp":"2026-08-07 19:56:09"}
+{"level":"http","message":"GET /api/v1/posts/6a6e486b9a6ca3b0d290cf47/comments 304 - - 128.161 ms","timestamp":"2026-08-07 19:56:09"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 131.307 ms","timestamp":"2026-08-07 19:56:09"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 95.605 ms","timestamp":"2026-08-07 19:56:10"}
+{"level":"warn","message":"POST /api/v1/reports/6a6e486b9a6ca3b0d290cf47 -> 401 Authentication required","timestamp":"2026-08-07 19:56:17"}
+{"level":"http","message":"POST /api/v1/reports/6a6e486b9a6ca3b0d290cf47 401 - - 2.737 ms","timestamp":"2026-08-07 19:56:17"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 81 - 100.352 ms","timestamp":"2026-08-07 19:56:22"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:56:22"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 3.418 ms","timestamp":"2026-08-07 19:56:22"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 1.972 ms","timestamp":"2026-08-07 19:56:25"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIC5D8VXIB8MiklOVKswtpZ43f-bsPzWm4BmnfJg9O038m_OdJC00DeRVDNgOUAtFA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none 302 64 - 580.320 ms","timestamp":"2026-08-07 19:56:32"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 42.751 ms","timestamp":"2026-08-07 19:56:35"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 42.664 ms","timestamp":"2026-08-07 19:56:35"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 45.931 ms","timestamp":"2026-08-07 19:56:35"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 140.287 ms","timestamp":"2026-08-07 19:56:36"}
+{"level":"http","message":"GET /api/v1/profile/6a6c613e215cff6a89a78a80 304 - - 124.837 ms","timestamp":"2026-08-07 19:56:39"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 89.340 ms","timestamp":"2026-08-07 19:56:40"}
+{"level":"http","message":"GET /api/v1/posts/6a6e486b9a6ca3b0d290cf47 304 - - 89.694 ms","timestamp":"2026-08-07 19:56:42"}
+{"level":"http","message":"GET /api/v1/posts/6a6e486b9a6ca3b0d290cf47/comments 304 - - 128.601 ms","timestamp":"2026-08-07 19:56:42"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 138.014 ms","timestamp":"2026-08-07 19:56:42"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 95.512 ms","timestamp":"2026-08-07 19:56:42"}
+{"level":"warn","message":"POST /api/v1/reports/6a6e486b9a6ca3b0d290cf47 -> 409 You have already reported this post","timestamp":"2026-08-07 19:56:49"}
+{"level":"http","message":"POST /api/v1/reports/6a6e486b9a6ca3b0d290cf47 409 450 - 137.421 ms","timestamp":"2026-08-07 19:56:49"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.798 ms","timestamp":"2026-08-07 19:57:17"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 19:57:28"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 1.436 ms","timestamp":"2026-08-07 19:57:28"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 0.819 ms","timestamp":"2026-08-07 19:57:29"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxID0N4RN4IMQGxQr2gUNAx0bRxByiOE5Rxp6hBQ4AAl5OSIBtgOPCxEXZjgHSiGASA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=mnit.ac.in&prompt=none 302 64 - 657.862 ms","timestamp":"2026-08-07 19:57:36"}
+{"level":"http","message":"GET /api/v1/auth/me 200 468 - 41.976 ms","timestamp":"2026-08-07 19:57:38"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 43.530 ms","timestamp":"2026-08-07 19:57:38"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 41.476 ms","timestamp":"2026-08-07 19:57:38"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 136.136 ms","timestamp":"2026-08-07 19:57:38"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 122.366 ms","timestamp":"2026-08-07 19:57:43"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 124.090 ms","timestamp":"2026-08-07 19:57:43"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 125.632 ms","timestamp":"2026-08-07 19:57:43"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 121.861 ms","timestamp":"2026-08-07 19:57:43"}
+{"level":"http","message":"POST /api/v1/reports/6a75a738c63e9e4d54c8d377 201 415 - 251.598 ms","timestamp":"2026-08-07 19:58:03"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 63.378 ms","timestamp":"2026-08-07 19:58:13"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 156 - 131.309 ms","timestamp":"2026-08-07 19:58:13"}
+{"level":"http","message":"GET /api/v1/reports 200 727 - 192.749 ms","timestamp":"2026-08-07 19:58:20"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 130.539 ms","timestamp":"2026-08-07 20:09:14"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 125.121 ms","timestamp":"2026-08-07 20:09:15"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 122.728 ms","timestamp":"2026-08-07 20:09:16"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 132.028 ms","timestamp":"2026-08-07 20:09:16"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 134.045 ms","timestamp":"2026-08-07 20:09:16"}
+{"level":"warn","message":"GET /api/v1/auth/me -> 401 Authentication required","timestamp":"2026-08-07 20:12:14"}
+{"level":"http","message":"GET /api/v1/auth/me 401 - - 2.833 ms","timestamp":"2026-08-07 20:12:14"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 132.272 ms","timestamp":"2026-08-07 20:12:14"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 125.473 ms","timestamp":"2026-08-07 20:12:14"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 142.542 ms","timestamp":"2026-08-07 20:12:14"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 134.740 ms","timestamp":"2026-08-07 20:12:14"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 3.837 ms","timestamp":"2026-08-07 20:12:24"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIBoTGrUUbUKRNkbhB4SUnpuJCK0vRjCe3FxKAMkitMjDTkuw0pMAudS1ki_Xi77dg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none 302 64 - 679.863 ms","timestamp":"2026-08-07 20:12:33"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 62.199 ms","timestamp":"2026-08-07 20:12:39"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 61.983 ms","timestamp":"2026-08-07 20:12:40"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 61.881 ms","timestamp":"2026-08-07 20:12:40"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 130.609 ms","timestamp":"2026-08-07 20:12:40"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 304 - - 128.411 ms","timestamp":"2026-08-07 20:12:49"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 304 - - 122.923 ms","timestamp":"2026-08-07 20:12:49"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 128.302 ms","timestamp":"2026-08-07 20:12:49"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 130.648 ms","timestamp":"2026-08-07 20:12:49"}
+{"level":"http","message":"POST /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 201 314 - 252.038 ms","timestamp":"2026-08-07 20:13:10"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 146.862 ms","timestamp":"2026-08-07 20:16:47"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 200 528 - 195.298 ms","timestamp":"2026-08-07 20:16:47"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 124.763 ms","timestamp":"2026-08-07 20:16:47"}
+{"level":"http","message":"POST /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 201 314 - 275.911 ms","timestamp":"2026-08-07 20:17:05"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377 200 - - 144.499 ms","timestamp":"2026-08-07 20:17:05"}
+{"level":"http","message":"GET /api/v1/posts/6a75a738c63e9e4d54c8d377/comments 200 972 - 204.690 ms","timestamp":"2026-08-07 20:17:05"}
+{"level":"http","message":"DELETE /api/v1/posts/6a75a738c63e9e4d54c8d377 200 95 - 324.130 ms","timestamp":"2026-08-07 20:17:23"}
+{"level":"http","message":"GET /api/v1/posts 200 - - 128.779 ms","timestamp":"2026-08-07 20:17:24"}
+{"level":"http","message":"GET /api/v1/auth/google 302 0 - 859.484 ms","timestamp":"2026-08-07 20:52:11"}
+{"level":"http","message":"GET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AXEQxIC6sws8XLxe1SHHNzmLDcs5f5qXaFnsVs1kc4P-qnxle2q02naksbDBavXHWT8THQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 302 64 - 814.812 ms","timestamp":"2026-08-07 20:52:32"}
+{"level":"http","message":"GET /api/v1/auth/me 200 462 - 67.363 ms","timestamp":"2026-08-07 20:52:39"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 67.825 ms","timestamp":"2026-08-07 20:52:40"}
+{"level":"http","message":"GET /api/v1/auth/me 304 - - 63.435 ms","timestamp":"2026-08-07 20:52:40"}
+{"level":"http","message":"GET /api/v1/posts 304 - - 104.753 ms","timestamp":"2026-08-07 20:52:40"}

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useStory } from "../hooks/queries/useStory";
 import StoryDetailLayout from "../layouts/StoryDetailLayout";
 import { FullPageLoader } from "@/components/feedback";
+
 export default function StoryDetailPage() {
   const { storyId } = useParams();
 

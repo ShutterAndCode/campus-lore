@@ -7,7 +7,8 @@ import useToggleReaction from "../hooks/queries/useToggleReaction";
 import useDeleteStory from "../hooks/mutations/useDeleteStory";
 
 import { useAuth } from "@/auth";
-
+import { useState } from "react";
+import ReportDialog from "@/report/components/ReportDialog";
 export default function StoryActions({
   storyId,
   storyAuthorId,
@@ -15,16 +16,12 @@ export default function StoryActions({
   bookmarked: initialBookmarked,
 }) {
   const navigate = useNavigate();
-
-  const {
-    bookmarked,
-    handleBookmark,
-    handleShare,
-    handleReport,
-  } = useStoryActions({
-    storyId,
-    initialBookmarked,
-  });
+  const [reportOpen, setReportOpen] = useState(false);
+  const { bookmarked, handleBookmark, handleShare} =
+    useStoryActions({
+      storyId,
+      initialBookmarked,
+    });
 
   const { user } = useAuth();
 
@@ -71,33 +68,27 @@ export default function StoryActions({
         ❤️ {helpful}
       </Button>
 
-      <Button
-        variant="outline"
-        onClick={handleBookmark}
-      >
+      <Button variant="outline" onClick={handleBookmark}>
         🔖 {bookmarked ? "Saved" : "Bookmark"}
       </Button>
 
-      <Button
-        variant="outline"
-        onClick={handleShare}
-      >
+      <Button variant="outline" onClick={handleShare}>
         ↗ Share
       </Button>
 
-      <Button
-        variant="ghost"
-        onClick={handleReport}
-      >
+      <Button variant="ghost" onClick={() => setReportOpen(true)}>
         ⚠ Report
       </Button>
 
+      <ReportDialog
+        open={reportOpen}
+        onOpenChange={setReportOpen}
+        postId={storyId}
+      />
+
       {isOwner && (
         <>
-          <Button
-            variant="outline"
-            onClick={handleEdit}
-          >
+          <Button variant="outline" onClick={handleEdit}>
             ✏️ Edit
           </Button>
 
@@ -106,9 +97,7 @@ export default function StoryActions({
             onClick={handleDelete}
             disabled={deleteMutation.isPending}
           >
-            {deleteMutation.isPending
-              ? "Deleting..."
-              : "🗑 Delete"}
+            {deleteMutation.isPending ? "Deleting..." : "🗑 Delete"}
           </Button>
         </>
       )}

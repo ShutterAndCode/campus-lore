@@ -1,7 +1,8 @@
 import Report from "../models/report.model.js";
 import ExperiencePost from "../models/experiencePost.model.js";
 import ApiError from "../utils/ApiError.js";
-
+const PUBLIC_PROFILE_FIELDS =
+  "name avatar bio branch batch graduationYear createdAt";
 export const createReport = async (postId, reporterId, reason, description) => {
   const post = await ExperiencePost.findById(postId);
   if (!post) {

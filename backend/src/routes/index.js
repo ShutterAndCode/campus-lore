@@ -11,7 +11,7 @@ import messageRoutes from "./message.routes.js";
 import notificationRoutes from "./notification.routes.js";
 import postRoutes from "./post.routes.js";
 import reportRoutes from './report.routes.js';
-
+import adminRoutes from "./admin.routes.js";
 
 const router = Router();
 
@@ -26,5 +26,6 @@ router.use("/messages", messageRoutes);
 router.use("/notifications", notificationRoutes);
 router.use("/posts", postRoutes);
 router.use('/reports', reportRoutes);
+router.use("/admin", adminRoutes);
 
 export default router;

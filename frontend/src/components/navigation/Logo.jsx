@@ -1,5 +1,5 @@
-import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/branding/logo.png";
 
 export default function Logo() {
   return (
@@ -7,28 +7,19 @@ export default function Logo() {
       to="/"
       className="flex items-center gap-3"
     >
-      <div
-        className="
-          flex
-          h-10
-          w-10
-          items-center
-          justify-center
-          rounded-xl
-          bg-primary
-          text-primary-foreground
-        "
-      >
-        <GraduationCap className="h-5 w-5" />
-      </div>
+      <img
+        src={logo}
+        alt="CampusLore"
+        className="h-9 w-9 object-contain"
+      />
 
-      <div>
-        <h1 className="text-lg font-bold">
+      <div className="leading-tight">
+        <h1 className="text-lg font-bold tracking-tight text-foreground">
           CampusLore
         </h1>
 
         <p className="text-xs text-muted-foreground">
-          Campus Knowledge Hub
+          Your Campus Knowledge Hub
         </p>
       </div>
     </Link>

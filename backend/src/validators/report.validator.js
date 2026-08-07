@@ -12,7 +12,7 @@ export const createReportBodySchema = z
     description: z.string().trim().max(500).optional(),
   })
   .strict();
-  
+
 export const getReportsQuerySchema = z
   .object({
     page: z.coerce.number().int().min(1).default(1),

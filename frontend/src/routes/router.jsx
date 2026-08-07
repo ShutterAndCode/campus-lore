@@ -16,6 +16,16 @@ import { ProfilePage } from "@/profile";
 import { AuthProvider } from "@/auth";
 import { StoryDetailPage, CreateStoryPage, EditStoryPage } from "@/story";
 import { SearchPage } from "@/search";
+
+import AdminRoute from "./AdminRoute.jsx";
+
+import {
+  AdminLayout,
+  DashboardPage,
+  UsersPage,
+  PostsPage,
+  ReportsPage,
+} from "@/admin";
 export const router = createBrowserRouter([
   {
     element: (
@@ -79,6 +89,40 @@ export const router = createBrowserRouter([
           {
             path: "/users/:userId",
             element: <ProfilePage />,
+          },
+
+          /*
+  |--------------------------------------------------------------------------
+  | Admin Routes
+  |--------------------------------------------------------------------------
+  */
+
+          {
+            element: <AdminRoute />,
+            children: [
+              {
+                path: "/admin",
+                element: <AdminLayout />,
+                children: [
+                  {
+                    index: true,
+                    element: <DashboardPage />,
+                  },
+                  {
+                    path: "users",
+                    element: <UsersPage />,
+                  },
+                  {
+                    path: "posts",
+                    element: <PostsPage />,
+                  },
+                  {
+                    path: "reports",
+                    element: <ReportsPage />,
+                  },
+                ],
+              },
+            ],
           },
         ],
       },

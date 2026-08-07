@@ -1,4 +1,5 @@
 import { Bell } from "lucide-react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 
@@ -7,8 +8,10 @@ export default function NotificationButton() {
     <Button
       variant="ghost"
       size="icon"
-      aria-label="Notifications"
-      className="relative rounded-full"
+      className="relative"
+      onClick={() =>
+        toast.info("Notifications are coming soon! 🔔")
+      }
     >
       <Bell className="h-5 w-5" />
 

@@ -39,25 +39,25 @@ export default function HeroSection() {
       : "Good Evening";
 
   return (
-    <section className="rounded-3xl border bg-card p-8 shadow-sm">
-      <div className="max-w-2xl">
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+    <section className="rounded-2xl border bg-card p-5 shadow-sm md:p-8">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           CampusLore
         </p>
 
-        <h1 className="mt-2 text-4xl font-bold tracking-tight">
+        <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
           {greeting}
           {user?.name ? `, ${user.name}` : ""} 👋
         </h1>
 
-        <p className="mt-4 text-muted-foreground leading-7">
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
           Discover experiences shared by seniors, explore campus
           opportunities, and contribute your own journey to help future
           students.
         </p>
       </div>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      <div className="mt-6 grid gap-3 md:mt-8 md:grid-cols-3 md:gap-4">
         {ACTIONS.map((action) => {
           const Icon = action.icon;
 
@@ -66,19 +66,19 @@ export default function HeroSection() {
               key={action.title}
               variant="outline"
               onClick={() => navigate(action.href)}
-              className="h-auto justify-start rounded-2xl p-5"
+              className="h-auto justify-start rounded-xl p-4 transition-all hover:border-primary hover:bg-primary/5"
             >
-              <div className="flex items-start gap-4">
-                <div className="rounded-xl bg-primary/10 p-3 text-primary">
+              <div className="flex items-center gap-3">
+                <div className="rounded-lg bg-primary/10 p-2.5 text-primary">
                   <Icon className="h-5 w-5" />
                 </div>
 
                 <div className="text-left">
-                  <p className="font-semibold">
+                  <p className="font-semibold leading-none">
                     {action.title}
                   </p>
 
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
                     {action.subtitle}
                   </p>
                 </div>

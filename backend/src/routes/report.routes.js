@@ -2,12 +2,14 @@ import { Router } from "express";
 import { authenticate } from "../middlewares/auth.middleware.js";
 import { authorize } from "../middlewares/role.middleware.js";
 import { validate } from "../middlewares/validate.middleware.js";
-import { reportIdParamsSchema } from "../validators/common.validator.js";
+import { postIdParamsSchema,reportIdParamsSchema } from "../validators/common.validator.js";
 import {
   getReportsQuerySchema,
   updateReportStatusBodySchema,
+  createReportBodySchema
 } from "../validators/report.validator.js";
 import {
+  createReportController,
   getReportsController,
   updateReportStatusController,
   resolveReportController,
@@ -15,6 +17,13 @@ import {
 
 const router = Router();
 
+router.post(
+  "/:postId",
+  authenticate,
+  validate(postIdParamsSchema, "params"),
+  validate(createReportBodySchema, "body"),
+  createReportController,
+);
 router.get(
   "/",
   authenticate,
